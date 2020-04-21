@@ -1,0 +1,156 @@
+AWS Trusted Advisor
+	An online resource to help you reduce cost, increase performance, and improve security by optimizing your AWS environment
+	Provides real time guidance to help you provision your resources following AWS best practices.
+	AWS Trusted Advisor’s Service Limit Dashboard currently covers 39 limits across 10 services. Continuous monitoring allows you to request limit increases or shut down resources before the limit is reached.
+
+AWS Limit Monitor
+	You can receive email notifications or notifications can be sent to your existing Slack channel, enabling you to request limit increases or shut down resources before the limit is reached
+	
+Amazon Inspector
+	An automated security assessment service that helps improve the security and compliance of applications deployed on AWS.
+	Automatically assesses applications for vulnerabilities or deviations from best practices.
+	Includes a knowledge base of hundreds of rules mapped to common security best practices and vulnerability definitions
+
+Spread Placement Groups
+X1e family
+CloudWatch Alarms - costs
+sound cloud design?
+
+AWS Regions
+	There are at least 2 Availability Zones per AWS Region. 
+	Each AWS Region is a separate geographic area.
+	Each AWS Region has multiple, isolated locations known as Availability Zones. 
+
+Availability zones
+	Isolated from each other, therefore if one availability zone goes down, the other AZ’s will still be up and running and hence your application will be more fault tolerant.
+
+Lightsail is AWS' Platform-as-a-Service offering.
+CloudFront Origin 
+The collection of a CDN's Edge Locations is called a Distribution.
+
+S3 
+	S3 Transfer Acceleration uses AWS' network of Edge Locations to more quickly get your data into AWS. 
+	To restrict access to an entire bucket, you use bucket policies; and to restrict access to an individual object, you use access control lists. 
+	Individual Amazon S3 objects can range in size from a minimum of 0 bytes to a maximum of 5 terabytes
+	You can store virtually unlimited amounts of data. 
+	Each object gets a directly accessible URL.
+
+	Amazon S3 Intelligent-Tiering (S3 Intelligent-Tiering)
+		Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead.
+		Amazon S3 monitors access patterns of the objects in S3 Intelligent-Tiering, and moves the ones that have not been accessed for 30 consecutive days to the infrequent access tier. If an object in the infrequent access tier is accessed, it is automatically moved back to the frequent access tier.
+		It is the ideal storage class for long-lived data with access patterns that are unknown or unpredictable
+
+	S3 Storage Classes
+		Can be configured at the object level and a single bucket can contain objects stored in S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, and S3 One Zone-IA
+
+Identity Access Management is a Global service. 
+
+CloudFormation
+	CloudFormation sections
+	CloudFormation designer
+
+Route53
+Elastic Beanstalk free to use
+A resource group is a collection of resources that share one or more tags (or portions of tags.)
+
+EBS
+	When you create an EBS volume in an Availability Zone, it is automatically replicated within that zone to prevent data loss due to failure of any single hardware component.
+	Enable encryption when you create a new EBS volume using the AWS Management Console, API, or CLI.
+	Once you create and attach an encrypted Amazon EBS volume to a supported Amazon Elastic Compute Cloud (Amazon EC2) instance type, data stored at rest on the volume, disk I/O, and snapshots created from the volume are all encrypted
+A HIPAA certification attests to the fact that the AWS Platform has met the standard required for the secure storage of medical records in the US. (watch the spelling many get it wrong) Further information: https://en.wikipedia.org/wiki/Hippa_(disambiguation)https://aws.amazon.com/compliance/hipaa-compliance/
+AWS Shield is AWS' managed DDoS protection service.
+	AWS provides flexible infrastructure and services that help customers implement strong DDoS mitigations and create highly available application architectures that follow AWS Best Practices for DDoS Resiliency. These include services such as Amazon Route 53, Amazon CloudFront, Elastic Load Balancing, and AWS WAF to control and absorb traffic, and deflect unwanted requests. These services integrate with AWS Shield, a managed DDoS protection service that provides always-on detection and automatic inline mitigations to safeguard web applications running on AWS
+WAF operates down to Layer 7. 
+Only AWS Shield Advanced offers automated application layer(7) monitoring. 
+AWS Inspector assesses the security and compliance of your EC2 instances. 
+Penetration Testing
+	AWS customers are welcome to carry out security assessments or penetration tests against their AWS infrastructure without prior approval for 8 services:
+		o Amazon EC2 instances, NAT Gateways, and Elastic Load Balancers
+		o Amazon RDS
+		o Amazon CloudFront
+		o Amazon Aurora
+		o Amazon API Gateways
+		o AWS Lambda and Lambda Edge functions
+		o Amazon Lightsail resources
+		o Amazon Elastic Beanstalk environments
+
+AWS Consolidated Billing
+	Single paying account. For billing purposes, AWS treats all the accounts on the consolidated bill as one account.
+	The default maximum is 20 linked accounts. This soft limit can be increased by contacting AWS. 
+
+AWS Artifact
+	Provides on-demand access to AWS’ security and compliance reports and select online agreements.
+		Service Organization Control (SOC) reports
+		Payment Card Industry (PCI) reports
+		Business Associate Addendum (BAA)
+		Nondisclosure Agreement (NDA).
+
+Shared Responsability Model
+	AWS is responsible for the security configuration of its products that are considered managed services. Examples of these types of services include Amazon DynamoDB, Amazon RDS, Amazon Redshift, Amazon Elastic MapReduce, Amazon WorkSpaces. For these services, AWS will handle basic security tasks like guest operating system (OS) and database patching, firewall configuration, and disaster recovery. For most of these managed services, all you have to do is configure logical access controls for the resources and protect your account credentials.
+	AWS is responsible for patching and fixing flaws within the infrastructure, but customers are responsible for patching their guest OS and applications
+
+Enterprise Support plan
+	Support Concierge Team: 
+		AWS billing and account experts that specialize in working with enterprise accounts.
+		Will quickly and efficiently assist you with your billing and account inquiries, and work with you to help implement billing and account best practices so that you can focus on what matters running your business.
+		Support Concierge service includes:
+			** 24 x7 access to AWS billing and account inquires. 
+			** Guidance and best practices for billing allocation, reporting, consolidation of accounts, and root-level account security. 
+			** Access to Enterprise account specialists for payment inquiries, training on specific cost reporting, assistance with service limits, and facilitating bulk purchases
+	Technical Account Manager (TAM)
+		Provides technical expertise for the full range of AWS services and obtains a detailed understanding of your use case and technology architecture.
+		Your TAM is the primary point of contact for ongoing support needs, and you have a direct telephone line to your TAM.
+
+Reliability
+	The reliability term encompasses the ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as mis-configurations or transient network issues. 
+
+AWS Abuse Team
+	Can assist you when AWS resources are being used to engage in the following types of abusive behavior: 
+		I. Spam: You are receiving unwanted emails from an AWS-owned IP address, or AWS resources are being used to spam websites or forums. 
+		II. Port scanning: Your logs show that one or more AWS-owned IP addresses are sending packets to multiple ports on your server, and you believe this is an attempt to discover unsecured ports. 
+		III. Denial of service attacks (DOS): Your logs show that one or more AWS-owned IP addresses are being used to flood ports on your resources with packets, and you believe this is an attempt to overwhelm or crash your server or software running on your server. 
+		IV. Intrusion attempts: Your logs show that one or more AWS-owned IP addresses are being used to attempt to log in to your resources. 
+		V. Hosting objectionable or copyrighted content: You have evidence that AWS resources are being used to host or distribute illegal content or distribute copyrighted content without the consent of the copyright holder. 
+		VI. Distributing malware: You have evidence that AWS resources are being used to distribute software that was knowingly created to compromise or cause harm to computers or machines on which it is installed
+
+AWS X-Ray
+
+The 5 Pillars of the Well Architected Framework:
+	1. Operational Excellence
+		The operational excellence pillar includes the ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures
+	2. Security
+		The security pillar includes the ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies
+	3. Reliability
+		The reliability pillar includes the ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues
+	4. Performance Efficiency
+		The performance efficiency pillar includes the ability to use computing resources efficiently to meet system requirements and to maintain that efficiency as demand changes and technologies evolve
+	5. Cost optimization
+		The cost optimization pillar includes the ability to avoid or eliminate unneeded cost or suboptimal resources.
+	The AWS Well-Architected Framework helps cloud architects build the most secure, high-performing, resilient, and efficient infrastructure possible for their applications.
+
+Amazon RDS
+	Creating Read Replicas across regions improves your disaster recovery capabilities and allows you to scale out globally
+
+AWS Security - Benefits
+	Keep Your DataSafe:
+		• The AWS infrastructure puts strong safeguards in place to help protect your privacy. All data is stored in highly secure AWS data centers.
+		• Meet Compliance Requirements:AWS manages dozens of compliance programs in its infrastructure. This means that segments of your compliance have already been completed.
+		• Save Money:Cut costs by using AWS data centers. Maintain the highest standard of security without having to manage your own facility
+		• Scale Quickly: Security scales with your AWS Cloud usage. No matter the size of your business, the AWS infrastructure is designed to keep your data safe
+
+TCO Calculator
+	Provides directional guidance on possible realized savings when deploying AWS. This tool is built on an underlying calculation model, that generates a fair assessment of value that a customer may achieve given the data provided by the user which includes the number of servers migrated to AWS, the server type, the number of Processors and so on.
+
+Amazon MapReduce
+	Amazon EMR helps you analyze and process vast amounts of data by distributing the computational work across a cluster of virtual servers running in the AWS Cloud. The cluster is managed using an open-source framework called Hadoop.
+	Amazon EMR lets you focus on crunching or analyzing your data without having to worry about time-consuming setup, management, and tuning of Hadoop clusters or the compute capacity they rely on
+
+Fault-tolerance
+	The ability for a system to remain in operation even if some of the components used to build the system fail.
+
+AWS Command Line Interface (CLI)
+	An unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts
+
+Elastic Load Balancing
+	Application Load Balancer
+		Best suited for load balancing of HTTP and HTTPS traffic and provides advanced request routing targeted at the delivery of modern application architectures, including microservices and containers

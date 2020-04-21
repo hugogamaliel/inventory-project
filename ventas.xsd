@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="ventas">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="header">
+					<xsd:complexType>
+						<xsd:attribute name="id_cliente" type="xsd:string"/>
+						<xsd:attribute name="nombre" type="xsd:string"/>
+						<xsd:attribute name="total" type="xsd:string"/>
+						<xsd:attribute name="id_vendedor" type="xsd:string"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="items">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="item" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:attribute name="id_articulo" type="xsd:string"/>
+									<xsd:attribute name="descripcion" type="xsd:string"/>
+									<xsd:attribute name="cantidad" type="xsd:string"/>
+									<xsd:attribute name="precio" type="xsd:string"/>
+									<xsd:attribute name="importe" type="xsd:string"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="abonos" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="abono" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:attribute name="cantidad" type="xsd:string"/>
+									<xsd:attribute name="fecha" type="xsd:string"/>
+									<xsd:attribute name="saldo" type="xsd:string"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
