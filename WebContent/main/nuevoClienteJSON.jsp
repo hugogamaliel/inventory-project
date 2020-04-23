@@ -252,6 +252,9 @@
         
         if (valido==1)
         {
+
+            alert(JSON.stringify({"id": $('#myId').val(), "nombre": $('#txtNombre').val(), "direccion": $('#txtDireccion').val(), "colonia": $('#txtColonia').val(), "celular": $('#txtCelular').val(), "lugar": $('#txtLugar').val(), "ruta": $('#txtIdRuta').val(), "referencias": $('#txtReferencias').val()}));
+            
             
             //POST
             $.ajax(
@@ -272,6 +275,7 @@
                     alert("Error");
                 }
             });
+            
         }
         else
         {

@@ -6,7 +6,7 @@ import java.util.Date;
 public class ProjectTasks 
 {
 
-	public String turnDateTOSQLFormat(Date today)
+	public String turnDateTOSQLFormat(Date today, int type)
 	{
 		String fechaResp = "";
 		
@@ -28,7 +28,13 @@ public class ProjectTasks
 	    	sMonth = Integer.toString(month);
 	    
 	    month = month + 1;
-	    fechaResp = day + "-" + sMonth + "-" + year;
+	    //type=1 -> American; type==" -> Mexican
+	    if (type==1)
+	    	fechaResp = year + "-" + sMonth + "-" + day;
+	   
+	    if (type==2)
+	    	fechaResp = day + "-" + sMonth + "-" + year;
+	    
 	    System.out.println("Clase ProjectTasks (Fecha: " + fechaResp + ")");
 		return fechaResp;
 	}

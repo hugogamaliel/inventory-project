@@ -786,39 +786,8 @@
 
     function guardarVenta()
     {
-    	//Recorrer la tabla como haya quedado y llenar lo textos con los valores divididos con guiones
-		
-        /*
-		var sizeTPartidasForm = Number(document.getElementById("tPartidasForm").getElementsByTagName("tr").length);
-		
-		for (i=0;i < sizeTPartidasForm; i++)
-		{
-			
-			document.getElementById("clmCantidad").value = document.getElementById("clmCantidad").value + document.getElementById('tPartidasForm').rows[i].cells[1].innerHTML + "-";
-			document.getElementById("clmPrecio").value = document.getElementById("clmPrecio").value + document.getElementById('tPartidasForm').rows[i].cells[2].innerHTML + "-";
-			document.getElementById("clmImporte").value = document.getElementById("clmImporte").value + document.getElementById('tPartidasForm').rows[i].cells[3].innerHTML + "-";
-			document.getElementById("clmIdArticulo").value = document.getElementById("clmIdArticulo").value + document.getElementById('tPartidasForm').rows[i].cells[4].innerHTML + "-";
-
-   		}
-		
-		var clmIdArticulo = document.getElementById("clmIdArticulo");
-		var clmCantidad = document.getElementById("clmCantidad");
-		var clmPrecio = document.getElementById("clmPrecio").value;
-		var clmImporte = do
-        cument.getElementById("clmImporte").value;
-
-		var txtTotal = document.getElementById("txtTotal").value;
-		var txtIDCliente = document.getElementById("txtIDCliente").value;
-		var txtIDVendedor = document.getElementById("txtIDVendedor").value;
-
-		var miformulario = document.getElementById("inv_form");
-		
-		//alert("clmIdArticulo: " + clmIdArticulo);
-		miformulario.submit();
-        */
-
+    
         //Create JSON
-
         var items = []; 
        
         var table = $("#tPartidasForm");
@@ -830,49 +799,48 @@
             cantidad = $tds.eq(1).text(),
             precio = $tds.eq(2).text();
             importe = $tds.eq(3).text();
-            id_articulo = $tds.eq(4).text();
+            idArticulo = $tds.eq(4).text();
       
-            items.push({"item": [{"descripcion": descripcion, "cantidad": cantidad, "precio": precio, "importe": importe, "id_articulo": id_articulo}]});
+            items.push({"descripcion": descripcion, "cantidad": cantidad, "precio": precio, "importe": importe, "idArticulo": idArticulo});
         });
 
         var itemsObj = {};
         itemsObj = items;
 
-        var id_cliente = document.getElementById("txtIDCliente").value;
+        var id = document.getElementById("txtIDCliente").value;
         var total = document.getElementById("txtTotal").value;
-        var id_vendedor = document.getElementById("txtIDVendedor").value;
-        var nombre = document.getElementById("txtNombre").innerHTML;
-
-        var headerObj = {"id_cliente": id_cliente, "nombre": nombre, "total": total, "id_vendedor": id_vendedor};
+        var idVendedor = document.getElementById("txtIDVendedor").value;
+        var nombreCliente = document.getElementById("txtNombre").innerHTML;
         
         var bodyObj = {};
-        bodyObj.header = headerObj;
-        bodyObj.items = itemsObj;
-        //ventaObj = {"ventas": bodyObj};
+        
+        bodyObj.id = id;
+        bodyObj.total = total;
+        bodyObj.nombreCliente = nombreCliente;
+        bodyObj.idVendedor = idVendedor;
+        bodyObj.items = items;
 
-        var ventaJSON = JSON.stringify(bodyObj); //alert(ventaJSON);
-
+        var ventaJSON = JSON.stringify(bodyObj); 
+    
         //POST
         $.ajax(
             {
                 type: "POST",
                 url: "http://localhost:8080/inventariojeans/rest/postservices/post-venta",
-                data: ventaJSON,
+                data: JSON.stringify(bodyObj),
                 headers: 
                 {
                     "Content-Type": "application/json"
                 },
                 success: function(data) 
                 {//alert("Ok!");
-
+                    window.location.replace("nueva_ventaJSON.jsp");
                 },
                 error : function(e)
                 {
                     alert("Error");
                 }
             });
-
-
     }
 
     function nuevaVenta(event)

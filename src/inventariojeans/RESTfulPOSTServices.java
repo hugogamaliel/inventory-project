@@ -1,5 +1,9 @@
 package inventariojeans;
 
+import java.util.Date;
+import java.io.IOException;
+import java.sql.*;
+
 import javax.ws.rs.Consumes;
 //import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -18,7 +22,7 @@ public class RESTfulPOSTServices
     @Path("/post-cliente")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postCliente(Cliente cliente){
-        String result = "Record entered: "+ cliente;
+        
         System.out.println("ID: " + cliente.id);
         System.out.println("Cliente: " + cliente);
         System.out.println("Nombre: " + cliente.nombre);
@@ -29,17 +33,28 @@ public class RESTfulPOSTServices
         System.out.println("Ruta: " + cliente.ruta);
         System.out.println("Referencias: " + cliente.referencias);
         
+        String result = "";
         //Guardar cliente
         DBHelper myDBHelper = new DBHelper();
         
-        String consultaSaveCliente = "INSERT INTO inv_clientes " +  
-        		"([id_cliente] , [nombre] , [direccion] , [colonia], [telefono], [lugar], [id_ruta], [referencias]) " + 
-        		"VALUES (" + cliente.id + ", '" + cliente.nombre + "', '" + cliente.direccion + "', '" + cliente.colonia + "', '" + 
-        		cliente.celular + "','" + cliente.lugar + "', " + cliente.ruta + ", '"+ cliente.referencias +"')";
-        
-        System.out.println("consultaSaveCliente" + consultaSaveCliente);
+        try
+        {
+        	String consultaSaveCliente = "INSERT INTO inv_clientes " +  
+            		"([id_cliente] , [nombre] , [direccion] , [colonia], [telefono], [lugar], [id_ruta], [referencias]) " + 
+            		"VALUES (" + cliente.id + ", '" + cliente.nombre + "', '" + cliente.direccion + "', '" + cliente.colonia + "', '" + 
+            		cliente.celular + "','" + cliente.lugar + "', " + cliente.ruta + ", '"+ cliente.referencias +"')";
+            
+            System.out.println("consultaSaveCliente" + consultaSaveCliente);
 
-    	myDBHelper.updateRecords(consultaSaveCliente); //Ejecutar consulta para guardar el cliente
+        	myDBHelper.updateRecords(consultaSaveCliente); //Ejecutar consulta para guardar el cliente
+        	
+        	result = "Record entered: "+ cliente;
+        }
+        catch(Exception e)
+        {
+        	System.out.println("Error: " + e);
+        }
+        
     	
         return Response.status(201).entity(result).build();
     }
@@ -82,12 +97,85 @@ public class RESTfulPOSTServices
 	@POST
 	@Path("/post-venta")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response postVenta(Ventas venta)
+	public Response postVenta(Ventas venta) throws SQLException, IOException
 	{
-		String resp="";
-		//System.out.println("Nombre: " + venta.header.nombre);
+		int idVenta = 0;
 		
-		return Response.status(200).entity(resp).build();
+		String fechaVenta = "";
+		ProjectTasks myTasks = new ProjectTasks();
+
+		Date today = new Date();
+		fechaVenta = myTasks.turnDateTOSQLFormat(today, 1);
+
+		System.out.println("Fecha devuelta: " + fechaVenta);
+
+		DBHelper dbHelper = new DBHelper();
+		ResultSet rs=null;
+		String consultaSaveVenta = "";
+
+		//Determinar el no. de venta mas grande en la tabla - 2019-09-27
+		String consultaUltimaVenta = "SELECT MAX(id_venta) FROM inv_ventas";
+
+		try
+		{
+			rs = dbHelper.getRecords(consultaUltimaVenta, 1);
+			idVenta = rs.getInt(1)+1;
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+
+		System.out.println("idVenta: " + idVenta);
+
+		//Crear consulta para guardar la venta
+		consultaSaveVenta = "INSERT INTO inv_ventas ([id_venta], [id_cliente], [total], [saldo], [fecha], [id_vendedor], [estado]) "
+				+ "VALUES (" + idVenta + ", " + venta.id + ", " + venta.total + ", " + venta.total + ", '" + fechaVenta + "', " 
+				+ venta.idVendedor +", " + 1 + ")";
+
+		System.out.println("consultaSaveVenta" + consultaSaveVenta);
+
+		dbHelper.updateRecords(consultaSaveVenta); //Ejecutar consulta para guardar la venta
+
+		String consultaSaveDetallesVenta = "";
+		
+		//Insertar partidas de la venta Original
+		for (Item myItems : venta.getItems())
+		{
+			consultaSaveDetallesVenta = "INSERT INTO inv_ventas_detalle ([id_venta], [id_articulo], [cantidad], [precio], [importe], [actual])"
+					+ " VALUES (" + idVenta + ", " + myItems.idArticulo +", " + myItems.cantidad +", " + myItems.precio +", " 
+					+ myItems.importe + ", 0)";
+			
+			System.out.println("consultaSaveDetallesVenta: " + consultaSaveDetallesVenta);
+			dbHelper.updateRecords(consultaSaveDetallesVenta);
+		}
+		//Insertar partidas de la venta actual
+		for (Item myItems : venta.getItems())
+		{
+			consultaSaveDetallesVenta = "INSERT INTO inv_ventas_detalle ([id_venta], [id_articulo], [cantidad], [precio], [importe], [actual])"
+					+ " VALUES (" + idVenta + ", " + myItems.idArticulo +", " + myItems.cantidad +", " + myItems.precio +", " 
+					+ myItems.importe + ", 1)";
+			
+			System.out.println("consultaSaveDetallesVenta: " + consultaSaveDetallesVenta);
+			dbHelper.updateRecords(consultaSaveDetallesVenta);
+		}
+
+		//Generar tarjeta en ruta de servidor Apache
+		//Generar XML
+		
+		CreateXMLTarjeta createXML = new CreateXMLTarjeta();
+		createXML.createTarjeta(idVenta);
+		
+		//Ejecutar FOP
+		
+		RunFOP runFOP=new RunFOP();
+		runFOP.createPDF(idVenta);
+		
+		//response.sendRedirect("nueva_venta.jsp");
+		String result = "Record entered: "+ venta;
+		
+		System.out.println("Result: " + result);
+		return Response.status(201).entity(result).build();
 		
 	}
 

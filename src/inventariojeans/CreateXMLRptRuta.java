@@ -95,7 +95,7 @@ public class CreateXMLRptRuta
 		
 		//Obtener la fecha del reporte (hoy)
 		Date today = new Date();
-		fechaAbono = myTasks.turnDateTOSQLFormat(today);
+		fechaAbono = myTasks.turnDateTOSQLFormat(today,2);
 		
 		xml = "<?xml version = '1.0' encoding = 'ISO-8859-1'?><reporte_ruta><header ruta='" + id_ruta+"' no_tarjetas='" + noTarjetas+ "' fecha_reporte='" + fechaAbono+ "' />";
 		xml = xml + partidas + "</reporte_ruta>";
