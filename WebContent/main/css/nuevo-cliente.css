@@ -1,0 +1,133 @@
+ #myId {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 110px;
+        border: none;
+        background: #ffffff;
+        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #txtNombre {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 600px;
+        border: none;
+        background: #ffffff;
+        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #txtDireccion {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 600px;
+        border: none;
+        background: #ffffff;
+        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #txtColonia {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 400px;
+        border: none;
+        background: #ffffff;
+        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #txtCelular {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 400px;
+        border: none;
+        background: #ffffff;
+        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #txtLugar {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 400px;
+        border: none;
+        background: #ffffff;
+        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #selRutas {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 200px;
+        border: none;
+        background: #ffffff;
+        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #txtCelular {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 400px;
+        border: none;
+        background: #ffffff;
+        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #txtReferencias {
+    
+    border-radius: 5px;
+    margin: 5px;
+    width: 400px;
+    border: none;
+    background: #ffffff;
+    font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+    line-height: 18px;
+    color: black;
+    padding: 10px 14px 10px 14px;
+    height: 150px;
+}

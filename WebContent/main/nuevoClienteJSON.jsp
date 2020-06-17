@@ -14,6 +14,7 @@
 <!--CSS-->
 <link rel="stylesheet" href="css/bootstrap.css" >
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/nuevo-cliente.css">
 <link rel="stylesheet" href="fonts/font-awesome.css">
 <!--JS-->
 <script src="js/jquery.js"></script>
@@ -26,143 +27,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 -->
-
-<style>
-    
-    #myId {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 110px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtNombre {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 600px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtDireccion {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 600px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtColonia {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 400px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtCelular {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 400px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtLugar {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 400px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #selRutas {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 200px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtCelular {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 400px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtReferencias {
-    
-    border-radius: 5px;
-    margin: 5px;
-    width: 400px;
-    border: none;
-    background: #ffffff;
-    font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-    line-height: 18px;
-    color: black;
-    padding: 10px 14px 10px 14px;
-    height: 150px;
-}
-</style>
 
 <script>
 
@@ -248,13 +112,11 @@
         if (document.getElementById("txtIdRuta").validity.valueMissing) 
         {valido=0;}
 
-        //var miformulario = document.getElementById("nuevo-cliente");
         
         if (valido==1)
         {
 
-            alert(JSON.stringify({"id": $('#myId').val(), "nombre": $('#txtNombre').val(), "direccion": $('#txtDireccion').val(), "colonia": $('#txtColonia').val(), "celular": $('#txtCelular').val(), "lugar": $('#txtLugar').val(), "ruta": $('#txtIdRuta').val(), "referencias": $('#txtReferencias').val()}));
-            
+            //alert(JSON.stringify({"id": $('#myId').val(), "nombre": $('#txtNombre').val(), "direccion": $('#txtDireccion').val(), "colonia": $('#txtColonia').val(), "celular": $('#txtCelular').val(), "lugar": $('#txtLugar').val(), "ruta": $('#txtIdRuta').val(), "referencias": $('#txtReferencias').val()}));
             
             //POST
             $.ajax(
@@ -274,14 +136,12 @@
                 {
                     alert("Error");
                 }
-            });
-            
+            });   
         }
         else
         {
             alert("Faltan valores requeridos");
         }
-        
     }
 
     function selChangeRutas()

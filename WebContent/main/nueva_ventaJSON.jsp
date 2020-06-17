@@ -734,8 +734,6 @@
 						alert('Error al recuperar articulos: ' + e);   
 					} 
 			});
-            
-            
         }
     }
 

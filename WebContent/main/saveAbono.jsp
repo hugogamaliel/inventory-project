@@ -26,7 +26,7 @@
 	ProjectTasks myTasks = new ProjectTasks();
 
 	Date today = new Date();
-	fechaAbono = myTasks.turnDateTOSQLFormat(today);
+	fechaAbono = myTasks.turnDateTOSQLFormat(today, 1);
 
 	System.out.println("Fecha devuelta: " + fechaAbono);
 
