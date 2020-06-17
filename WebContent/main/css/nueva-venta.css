@@ -5,9 +5,9 @@
         width: 90px;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
        
@@ -20,9 +20,9 @@
         width: 90px;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
         line-height: 18px;
-        color: #bab9b9;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
        
@@ -31,7 +31,7 @@
     #tRowsForm th, td 
     {
         color: white;
-        font-size: 18px;
+        font-size: 16px;
         
     }
     
@@ -52,9 +52,9 @@
         background: #ffffff;
         margin: 30px;
         width: 1000px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -69,9 +69,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -86,9 +86,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -103,9 +103,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -120,9 +120,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -145,9 +145,9 @@
         background: #ffffff;
         margin: 30px;
         width: 1000px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -162,9 +162,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -179,9 +179,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -196,9 +196,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -213,9 +213,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -237,7 +237,7 @@
         text-align: center;
         color: white;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     #tMotor .myId {
@@ -252,9 +252,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -273,9 +273,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -293,9 +293,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -315,7 +315,7 @@
         text-align: center;
         color: white;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     #tVendedor .sel {
@@ -330,9 +330,9 @@
         outline: none;
         border: none;
         background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 16px;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -353,9 +353,9 @@
         background: none;
         
         width: 287px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
         line-height: 14px;
-        color: #bab9b9;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -370,9 +370,9 @@
         outline: none;
         border: none;
         background: none;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
         line-height: 14px;
-        color: #bab9b9;
+        color: black;
         padding: 10px 14px 10px 14px;
         height: 39px;
         resize: none;
@@ -387,7 +387,7 @@
         outline: none;
         border: none;
         background: black;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
         line-height: 14px;
         color: white;
         padding: 10px 14px 10px 14px;
@@ -404,7 +404,7 @@
         outline: none;
         border: none;
         background: black;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
         line-height: 14px;
         color: white;
         padding: 10px 14px 10px 14px;

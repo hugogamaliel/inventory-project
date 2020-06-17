@@ -1,0 +1,494 @@
+ #inIDCliente {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 90px;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #inAbono {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 90px;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #inIDTarjeta {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 90px;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #tPartidas 
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border: none;
+        border-collapse: separate;
+        border-spacing: 10px 0.5rem;
+    }
+
+    #tPartidas .descripcion {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 400px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    
+    }
+
+    #tPartidas .descripcion_black {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: 393838;
+        margin: 30px;
+        width: 400px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    
+    }
+
+    #tPartidas .cantidad 
+    {   
+        border-radius: 5px;
+        margin: 10px;
+        width: 80px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: center;
+    }
+
+    #tPartidas .cantidad_black
+    {   
+        border-radius: 5px;
+        margin: 10px;
+        width: 80px;
+        outline: none;
+        border: none;
+        background: 393838;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: white;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: center;
+    }
+
+    #tPartidas .importe
+    {
+        border-radius: 5px;
+        margin: 10px;
+        width: 100px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: right;
+    }
+
+    #tPartidas .importe_black
+    {
+        border-radius: 5px;
+        margin: 10px;
+        width: 100px;
+        outline: none;
+        border: none;
+        background: #686262;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: white;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: right;
+    }
+
+    #tAbonos_titulos 
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    }
+
+    #tAbonos_titulos .header_fecha
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        width: 165px;
+    }
+
+    #tAbonos_titulos .header_cantidad
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        width: 120px;
+    }
+
+    #tAbonos_titulos .header_saldo
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        width: 100px;
+    }
+
+    #tAbonos_titulos .header_enganche
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        width: 50px;
+    }
+   
+    #l1
+    {
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        width: 165px;
+    }
+
+    #l2
+    {
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        width: 165px;
+    }
+
+    #tAbonos
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border: none;
+        border-collapse: separate;
+        border-spacing: 10px 0.5rem;
+    }
+
+    #tAbonos .fecha {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 150px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    
+    }
+
+    #tAbonos .cantidad {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 100px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: right;
+    
+    }
+
+    #tAbonos .saldo {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 100px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: right;
+    
+    }
+
+     #tAbonos .enganche {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 70px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    
+    }
+    #tMotor 
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    }
+
+    #tMotor .header_des
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        width: 410px;
+    }
+
+    #tMotor .header_can
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        width: 100px;
+    }
+
+    #tMotor .header_imp
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        width: 100px;
+    }
+
+    #tResumen
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border: none;
+        border-collapse: separate;
+        border-spacing: 10px 0.5rem;
+    }
+
+    #tResumen .titulo
+    {   
+        border-radius: 5px;
+        margin: 10px;
+        width: 80px;
+        outline: none;
+        border: none;
+        background: black;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: white;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: center;
+    }
+
+    #tResumen .cantidad
+    {   
+        border-radius: 5px;
+        margin: 10px;
+        width: 120px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: right;
+       
+    }
+
+
+    #tTarjetas 
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border: none;
+        border-collapse: separate;
+        border-spacing: 10px 0.5rem;
+    }
+
+    #tTarjetas .titulo {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        margin: 30px;
+        width: 180px;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: left;
+    
+    }
+
+    #tTarjetas .id_cliente {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 180px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: left;
+    
+    }
+
+    #tTarjetas .fecha {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 200px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: center;
+    
+    }
+
+    #tTarjetas .total
+    {
+        border-radius: 5px;
+        margin: 10px;
+        width: 130px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: right;
+    }
+
+    #tTarjetas .id_venta {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 180px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: left;
+    }
+
+    #tTarjetas .vendedor {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 250px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: left;
+    
+    }
+
+    #tTarjetas .boton {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        margin: 30px;
+        width: 250px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: left;
+    
+    }

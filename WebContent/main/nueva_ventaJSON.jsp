@@ -667,7 +667,7 @@
 
                     <form id="inv_form" action="saveVenta.jsp">
     
-                        <table id="tPartidasForm">
+                        <table id="tPartidasForm" hidden>
                         </table>
 
                         <input name="txtTotal" id="txtTotal" hidden/>
@@ -678,14 +678,6 @@
                         <input name="clmCantidad" id="clmCantidad" hidden/>
                         <input name="clmPrecio" id="clmPrecio" hidden/>
                         <input name="clmImporte" id="clmImporte" hidden/>
-
-                        <!--
-                        <div id="items">
-                            <div id="item">
-                                <input id="" 
-                            </div>
-                        </div>
-                        -->
 
                         <div id="btnGuardar" class="btns" hidden>
                             <a data-type="submit" class="btn-default btn5" onclick="guardarVenta()">Guardar</a>
