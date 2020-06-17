@@ -306,7 +306,6 @@
 					
 					document.getElementById("selArticulos").disabled=false;
 	
-
 				   	},
 					error: function(e)
 					{  

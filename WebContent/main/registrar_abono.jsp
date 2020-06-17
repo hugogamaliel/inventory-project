@@ -338,7 +338,21 @@
 
             var miformulario = document.getElementById("inv_form");
             
-            miformulario.submit();
+            //miformulario.submit();
+
+            //POST abono
+
+            var item = [];
+
+            //item.push({"abono": txtAbono, "nuevoSaldo": txtNvoSaldo, "idVenta": txtIDVenta, "isEnganche": txtIsEnganche}); 
+
+            var itemAbono = {};
+            itemAbono.abono = txtAbono;
+            itemAbono.nuevoSaldo = txtNvoSaldo;
+
+            var abonoJSON = JSON.stringify(itemAbono);
+
+            alert(abonoJSON);
         }
     }
 
