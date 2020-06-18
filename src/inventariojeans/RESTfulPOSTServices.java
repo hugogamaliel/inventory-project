@@ -183,13 +183,14 @@ public class RESTfulPOSTServices
 	@POST
     @Path("/post-abono")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response postAbono(Abono abono){
+    public Response postAbono(Abono abono) throws SQLException, IOException{
         
         System.out.println("IdVenta: " + abono.idVenta);
         System.out.println("Cantidad: " + abono.cantidad);
         System.out.println("Nuevo Saldo: " + abono.saldo);
         System.out.println("IsEnganche: " + abono.isEnganche);
         
+        int idVenta = 0;
         String result = "";
         DBHelper myDBHelper = new DBHelper();
         
@@ -211,7 +212,7 @@ public class RESTfulPOSTServices
             
             System.out.println("consultaSaveAbono" + consultaSaveAbono);
 
-        	//myDBHelper.updateRecords(consultaSaveAbono); //Ejecutar consulta para guardar el abono
+        	myDBHelper.updateRecords(consultaSaveAbono); //Ejecutar consulta para guardar el abono
         	
         	result = "Record entered: "+ abono;
         }
@@ -226,7 +227,18 @@ public class RESTfulPOSTServices
 
     	System.out.println("consultaActualizarSaldo: " + consultaActualizarSaldo);
 
-    	//myDBHelper.updateRecords(consultaActualizarSaldo); //Ejecutar consulta para actualizar el saldo
+    	myDBHelper.updateRecords(consultaActualizarSaldo); //Ejecutar consulta para actualizar el saldo
+    
+    	//Actualizar PDF de tarjeta
+    	
+    	idVenta = Integer.parseInt(abono.idVenta);
+    	
+    	CreateXMLTarjeta createXML = new CreateXMLTarjeta();
+    	createXML.createTarjeta(idVenta);
+    	
+    	//Ejecutar FOP
+    	RunFOP runFOP=new RunFOP();
+    	runFOP.createPDF(idVenta);
         
         return Response.status(201).entity(result).build();
     }
