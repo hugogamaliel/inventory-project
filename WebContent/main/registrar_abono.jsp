@@ -337,14 +337,35 @@
             var txtIsEnganche = document.getElementById("txtIsEnganche").value;
 
             var itemAbono = {};
-            itemAbono.abono = txtAbono;
-            itemAbono.nuevoSaldo = txtNvoSaldo;
+            itemAbono.cantidad = txtAbono;
+            itemAbono.saldo = txtNvoSaldo;
             itemAbono.idVenta = txtIDVenta;
+            //itemAbono.fecha = 
             itemAbono.isEnganche = txtIsEnganche;
 
             var abonoJSON = JSON.stringify(itemAbono);
-            //alert(abonoJSON);
+            alert(abonoJSON);
             //POST JSON
+            
+            $.ajax(
+            {
+                type: "POST",
+                url: "http://localhost:8080/inventariojeans/rest/postservices/post-abono",
+                data: JSON.stringify(itemAbono),
+                headers: 
+                {
+                    "Content-Type": "application/json"
+                },
+                success: function(data) 
+                {//alert("Ok!");
+                    window.location.replace("registrar-abono.jsp");
+                },
+                error : function(e)
+                {
+                    alert("Error");
+                }
+            }); 
+            
         }
     }
 

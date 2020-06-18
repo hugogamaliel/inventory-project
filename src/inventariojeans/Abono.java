@@ -3,10 +3,10 @@ package inventariojeans;
 public class Abono 
 {
 	
-	private String idVenta;
-	private String cantidad;
-	private String fecha;
-	private int isEnganche;
+	String idVenta;
+	String cantidad;
+	String saldo;
+	int isEnganche;
 	
 	public void setIdVenta(String idVenta)
 	{
@@ -15,8 +15,32 @@ public class Abono
 	
 	public String getIdVenta()
 	{
-		return this.idVenta;
+		return idVenta;
 	}
+	
+	public String getCantidad() {
+        return cantidad;
+    }
+	
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
+    }
+    
+    public String getSaldo() {
+        return saldo;
+    }
+	
+    public void setSaldo(String saldo) {
+        this.saldo = saldo;
+    }
+    
+    public int getIsEnganche() {
+        return isEnganche;
+    }
+	
+    public void setIsEnganche(int isEnganche) {
+        this.isEnganche = isEnganche;
+    }
 	
 
 }

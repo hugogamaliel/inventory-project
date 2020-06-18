@@ -178,5 +178,57 @@ public class RESTfulPOSTServices
 		return Response.status(201).entity(result).build();
 		
 	}
+	
+	//18-jun-2020
+	@POST
+    @Path("/post-abono")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postAbono(Abono abono){
+        
+        System.out.println("IdVenta: " + abono.idVenta);
+        System.out.println("Cantidad: " + abono.cantidad);
+        System.out.println("Nuevo Saldo: " + abono.saldo);
+        System.out.println("IsEnganche: " + abono.isEnganche);
+        
+        String result = "";
+        DBHelper myDBHelper = new DBHelper();
+        
+        //Calculate fecha
+        String fechaAbono = "";
+    	ProjectTasks myTasks = new ProjectTasks();
+
+    	Date today = new Date();
+    	fechaAbono = myTasks.turnDateTOSQLFormat(today, 1);
+
+    	System.out.println("Fecha devuelta: " + fechaAbono);
+    	
+        try
+        {
+        	String consultaSaveAbono = "INSERT INTO inv_abonos " +  
+            		"([id_venta] , [cantidad] , [saldo] , [fecha], [isEnganche]) " + 
+            		"VALUES (" + abono.idVenta + ", " + abono.cantidad + ", " + abono.saldo + ", '" + fechaAbono + "', " + 
+            		abono.isEnganche + ")";
+            
+            System.out.println("consultaSaveAbono" + consultaSaveAbono);
+
+        	//myDBHelper.updateRecords(consultaSaveAbono); //Ejecutar consulta para guardar el abono
+        	
+        	result = "Record entered: "+ abono;
+        }
+        catch(Exception e)
+        {
+        	System.out.println("Error: " + e);
+        }
+        
+      //Consulta para actualizar el saldo
+
+    	String consultaActualizarSaldo = "update inv_ventas set saldo = " + abono.saldo + " where id_venta = " + abono.idVenta;
+
+    	System.out.println("consultaActualizarSaldo: " + consultaActualizarSaldo);
+
+    	//myDBHelper.updateRecords(consultaActualizarSaldo); //Ejecutar consulta para actualizar el saldo
+        
+        return Response.status(201).entity(result).build();
+    }
 
 }
