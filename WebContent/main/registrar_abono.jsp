@@ -331,31 +331,24 @@
         var x = event.keyCode;
         if (x == 13) 
         {
-            var txtAbono = document.getElementById("txtAbono");
-            var txtNvoSaldo = document.getElementById("txtNvoSaldo");
-            var txtIDVenta = document.getElementById("txtIDVenta");
-            var txtIsEnganche = document.getElementById("txtIsEnganche");
-
-            var miformulario = document.getElementById("inv_form");
-            
-            //miformulario.submit();
-
-            //POST abono
-
-            var item = [];
-
-            //item.push({"abono": txtAbono, "nuevoSaldo": txtNvoSaldo, "idVenta": txtIDVenta, "isEnganche": txtIsEnganche}); 
+            var txtAbono = document.getElementById("txtAbono").value;
+            var txtNvoSaldo = document.getElementById("txtNvoSaldo").value;
+            var txtIDVenta = document.getElementById("txtIDVenta").value;
+            var txtIsEnganche = document.getElementById("txtIsEnganche").value;
 
             var itemAbono = {};
             itemAbono.abono = txtAbono;
             itemAbono.nuevoSaldo = txtNvoSaldo;
+            itemAbono.idVenta = txtIDVenta;
+            itemAbono.isEnganche = txtIsEnganche;
 
             var abonoJSON = JSON.stringify(itemAbono);
-
-            alert(abonoJSON);
+            //alert(abonoJSON);
+            //POST JSON
         }
     }
 
+    /*
     function saveAbono()
     {
         var txtAbono = document.getElementById("txtAbono");
@@ -367,6 +360,7 @@
             
         miformulario.submit();
     }
+    */
 
 </script>
 
@@ -507,11 +501,11 @@
                         <input name="txtTotal" id="txtTotal" hidden/>
                         
                         <input name="tSaldo" id="tSaldo"hidden/>
-                        <input name="txtAbono" id="txtAbono" hidden/>
+                        <input name="txtAbono" id="txtAbono"/>
                         <input name="txtNvoPagado" id="txtNvoPagado" hidden/>
-                        <input name="txtNvoSaldo" id="txtNvoSaldo" hidden/>
-                        <input name="txtIDVenta" id="txtIDVenta" hidden/>
-                        <input name="txtIsEnganche" id="txtIsEnganche" hidden/>
+                        <input name="txtNvoSaldo" id="txtNvoSaldo"/>
+                        <input name="txtIDVenta" id="txtIDVenta"/>
+                        <input name="txtIsEnganche" id="txtIsEnganche"/>
 
                         <div class="btns">
                              <a data-type="submit" class="btn-default btn5" href="index.jsp">Regresar</a>
