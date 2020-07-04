@@ -35,7 +35,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/max_cliente",
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/max_cliente",
             dataType: "json",  
             success: function(data)
             {     
@@ -52,7 +52,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/rutas",
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/rutas",
             dataType: "json",  
             success: function(data)
             {
@@ -122,7 +122,7 @@
             $.ajax(
             {
                 type: "POST",
-                url: "http://localhost:8080/inventariojeans/rest/postservices/post-cliente",
+                url: "http://54.144.154.41:8180/inventariojeans/rest/postservices/post-cliente",
                 data: JSON.stringify({"id": $('#myId').val(), "nombre": $('#txtNombre').val(), "direccion": $('#txtDireccion').val(), "colonia": $('#txtColonia').val(), "celular": $('#txtCelular').val(), "lugar": $('#txtLugar').val(), "ruta": $('#txtIdRuta').val(), "referencias": $('#txtReferencias').val()}),
                 headers: 
                 {

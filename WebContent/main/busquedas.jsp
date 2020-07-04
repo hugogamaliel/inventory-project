@@ -165,7 +165,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/busquedas/nombre=" + nombre + "/direccion=" + direccion,
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/busquedas/nombre=" + nombre + "/direccion=" + direccion,
             dataType: "json",  
             success: function(data)
                     {
@@ -226,7 +226,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/busquedasAND/nombre=" + nombre + "/direccion=" + direccion,
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/busquedasAND/nombre=" + nombre + "/direccion=" + direccion,
             dataType: "json",  
             success: function(data)
                     {

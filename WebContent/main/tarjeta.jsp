@@ -149,7 +149,7 @@ function verPDF(id_venta)
 
         var parent = $('embed#pdf_file').parent();
        
-        var newElement = "<embed src='http://localhost/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+        var newElement = "<embed src='http://54.144.154.41:8180/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
 
         $('embed#pdf_file').remove();
         parent.append(newElement);

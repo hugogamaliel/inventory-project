@@ -65,7 +65,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+                url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -122,7 +122,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/datos_cliente_by_id/id_cuenta=" + id_venta,
+                url: "http://54.144.154.41:8180/inventariojeans/rest/services/datos_cliente_by_id/id_cuenta=" + id_venta,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -182,7 +182,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/abonos/id_venta=" + id_venta,
+                url: "http://54.144.154.41:8180/inventariojeans/rest/services/abonos/id_venta=" + id_venta,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -350,7 +350,7 @@
             $.ajax(
             {
                 type: "POST",
-                url: "http://localhost:8080/inventariojeans/rest/postservices/post-abono",
+                url: "http://54.144.154.41:8180/inventariojeans/rest/postservices/post-abono",
                 data: JSON.stringify(itemAbono),
                 headers: 
                 {

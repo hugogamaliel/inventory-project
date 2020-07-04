@@ -702,7 +702,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -754,7 +754,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_general/id_venta=" + id_venta,
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle_general/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -816,7 +816,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -1033,7 +1033,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
+                url: "http://54.144.154.41:8180/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -1056,7 +1056,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/tarjetas/id_cliente=" + id_cliente,
+                url: "http://54.144.154.41:8180/inventariojeans/rest/services/tarjetas/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -1184,7 +1184,7 @@
         
         var parent = $('embed#pdf_file').parent();
        
-        var newElement = "<embed src='http://localhost/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+        var newElement = "<embed src='http://54.144.154.41:8180/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
 
         $('embed#pdf_file').remove();
         parent.append(newElement);

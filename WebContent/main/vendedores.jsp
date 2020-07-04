@@ -222,7 +222,7 @@
          $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/vendedores",
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/vendedores",
             dataType: "json",  
             success: function(data)
             {
@@ -258,7 +258,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/vendedores",
+                url: "http://54.144.154.41:8180/inventariojeans/rest/services/vendedores",
                 dataType: "json",  
                 success: function(data)
                 {
@@ -335,7 +335,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/tarjetas_by_vendedor/id_vendedor=" + id_vendedor,
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/tarjetas_by_vendedor/id_vendedor=" + id_vendedor,
             dataType: "json",  
             success: function(data)
             {

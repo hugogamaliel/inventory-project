@@ -486,7 +486,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/articulos",
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/articulos",
             dataType: "json",  
             success: function(data)
             {

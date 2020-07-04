@@ -543,7 +543,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -611,7 +611,7 @@
         $.ajax(
                 {
                     type: "GET",  
-                    url: "http://localhost:8080/inventariojeans/rest/services/abonos/id_venta=" + id_venta,
+                    url: "http://54.144.154.41:8180/inventariojeans/rest/services/abonos/id_venta=" + id_venta,
                     dataType: "json",  
                     success: function(data)
                     {
@@ -750,7 +750,7 @@
             $.ajax(
                 {
                     type: "GET",  
-                    url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle/id_cliente=" + id_cliente,
+                    url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle/id_cliente=" + id_cliente,
                     dataType: "json",  
                     success: function(data)
                     {
@@ -806,7 +806,7 @@
             $.ajax(
                 {
                     type: "GET",  
-                    url: "http://localhost:8080/inventariojeans/rest/services/abonos/id_cliente=" + id_cliente,
+                    url: "http://54.144.154.41:8180/inventariojeans/rest/services/abonos/id_cliente=" + id_cliente,
                     dataType: "json",  
                     success: function(data)
                     {
@@ -851,7 +851,7 @@
             $.ajax(
                 {
                     type: "GET",  
-                    url: "http://localhost:8080/inventariojeans/rest/services/datos_cliente/id_cliente=" + id_cliente,
+                    url: "http://54.144.154.41:8180/inventariojeans/rest/services/datos_cliente/id_cliente=" + id_cliente,
                     dataType: "json",  
                     success: function(data)
                     {

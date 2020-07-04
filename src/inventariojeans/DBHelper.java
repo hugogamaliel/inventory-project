@@ -12,7 +12,7 @@ public class DBHelper
 {
 	private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	private static final String USER = "sa";
-	private static final String PASS = "mbge321.";
+	private static final String PASS = "Password0.";
 	
 	public int updateRecords(String consultaUpdate)
 	{
@@ -25,7 +25,7 @@ public class DBHelper
 		try
 		{
 			Class.forName(DRIVER);
-		    conexion = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-IAN63DL:1433;DatabaseName=inventariojeans",USER,PASS);
+		    conexion = DriverManager.getConnection("jdbc:sqlserver://10.0.2.7:1433;DatabaseName=inventariojeans",USER,PASS);
 		    sentencia=conexion.createStatement();
 
 		    nFilas = sentencia.executeUpdate(consultaUpdate);
@@ -66,7 +66,7 @@ public class DBHelper
 			try 
 			{
 				Class.forName(DRIVER);
-				conexion = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-IAN63DL:1433;DatabaseName=inventariojeans",USER, PASS);
+				conexion = DriverManager.getConnection("jdbc:sqlserver://10.0.2.7:1433;DatabaseName=inventariojeans",USER, PASS);
 				sentencia = conexion.createStatement();
 				dataSet = sentencia.executeQuery(consultaSelect);
 				System.out.println("Consulta getRecords: " + consultaSelect);
@@ -88,7 +88,7 @@ public class DBHelper
 			try 
 			{
 				Class.forName(DRIVER);
-				conexion = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-IAN63DL:1433;DatabaseName=inventariojeans",USER, PASS);
+				conexion = DriverManager.getConnection("jdbc:sqlserver://10.0.2.7:1433;DatabaseName=inventariojeans",USER, PASS);
 				sentencia = conexion.createStatement();
 				dataSet = sentencia.executeQuery(consultaSelect);
 				System.out.println("Consulta getRecords: " + consultaSelect);

@@ -76,7 +76,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/rutas",
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/rutas",
             dataType: "json",  
             success: function(data)
             {
@@ -139,7 +139,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/reporte_ruta/id_ruta=" + id_ruta,
+            url: "http://54.144.154.41:8180/inventariojeans/rest/services/reporte_ruta/id_ruta=" + id_ruta,
             dataType: "json",  
             success: function(data)
             {
