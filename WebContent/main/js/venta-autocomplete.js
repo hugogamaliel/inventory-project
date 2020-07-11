@@ -5,7 +5,7 @@ $(function(){
   $.ajax({
 		  type: "GET", 
 		  async: false,
-	    url: "http://54.144.154.41:8180/inventariojeans/rest/services/nombres_clientes",
+	    url: "http://localhost:8080/inventariojeans/rest/services/nombres_clientes",
 	    dataType: "json",
 	    success:  function(data) 
 	    {
@@ -54,7 +54,7 @@ $(function(){
       	$.ajax(
 			{
 				type: "GET",  
-				url: "http://54.144.154.41:8180/inventariojeans/rest/services/articulos",
+				url: "http://localhost:8080/inventariojeans/rest/services/articulos",
 				dataType: "json",  
 				success: function(data)
 				{

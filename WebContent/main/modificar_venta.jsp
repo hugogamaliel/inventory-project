@@ -13,8 +13,10 @@
 <!--CSS-->
 <link rel="stylesheet" href="css/bootstrap.css" >
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/modificar-venta.css">
 <link rel="stylesheet" href="fonts/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="style.css">
+
 <!--JS-->
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -24,660 +26,14 @@
 <script src="js/jquery.ui.totop.js"></script>
 <script src="js/accounting.js"></script>
 
+<!--
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+-->
 <script src="/js/pdfobject.js"></script>
 <!--
 <script type="text/javascript" src="js/modif-autocomplete.js"></script>
 -->
-
-<style>
-
-    #inIDCliente {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 90px;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #header_partidas
-    {
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        width: 410px;
-    }
-
-    #main 
-    {
-        width: 5000px;
-    }
-
-    #inIDCliente {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 90px;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #inAbono {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 90px;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #tPartidas 
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tPartidas .descripcion {
-        
-       	border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 400px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-    
-    }
-
-   	#tPartidas .cantidad 
-   	{   
-       	border-radius: 5px;
-        margin: 10px;
-        width: 80px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    }
-
-    #tPartidas .cantidad_black
-    {   
-        border-radius: 5px;
-        margin: 10px;
-        width: 80px;
-        outline: none;
-        border: none;
-        background: #393838;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: white;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    }
-
-    #tPartidas .importe
-    {
-    	border-radius: 5px;
-        margin: 10px;
-        width: 100px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-    }
-
-    
-
-    #tPartidasH 
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-       
-    }
-
-    #tPartidasH .descripcion 
-    {
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #FFEEEE;
-        margin: 30px;
-        width: 400px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #FAABAB;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-    }
-
-    #tPartidasH .header_partidas
-    {
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        width: 400px;
-        text-align: left;
-    }
-
-    #tPartidasH .cantidad 
-    {   
-        border-radius: 5px;
-        margin: 10px;
-        width: 80px;
-        outline: none;
-        border: none;
-        background: #FFEEEE;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #FAABAB;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    }
-
-    #tPartidasH .importe
-    {
-        border-radius: 5px;
-        margin: 10px;
-        width: 100px;
-        outline: none;
-        border: none;
-        background: #FFEEEE;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #FAABAB;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-    }
-
-    #tPartidasH .estado 
-    {
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #FFEEEE;
-        margin: 30px;
-        width: 100px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #686262;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-    }
-
-
-    #tPartidasModificar
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tPartidasModificar .descripcion {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 400px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-    
-    }
-
-    #tPartidasModificar .cantidad 
-    {   
-        border-radius: 5px;
-        margin: 10px;
-        width: 80px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    }
-
-    #tPartidasModificar .importe
-    {
-        border-radius: 5px;
-        margin: 10px;
-        width: 100px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-    }
-
-    #tPartidasTotal
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tPartidasTotal .descripcion_black 
-    {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: black;
-        margin: 30px;
-        width: 400px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-    
-    }
-
-    #tPartidasTotal .cantidad_black
-    {
-        border-radius: 5px;
-        margin: 10px;
-        width: 90px;
-        outline: none;
-        border: none;
-        background: black;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    }
-
-    #tPartidasTotal .importe_black
-    {
-        border-radius: 5px;
-        margin: 10px;
-        width: 100px;
-        outline: none;
-        border: none;
-        background: black;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: white;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-    }
-
-    #tPartidasTotal .total_black
-    {
-        border-radius: 5px;
-        margin: 10px;
-        width: 100px;
-        outline: none;
-        border: none;
-        background: black;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: white;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-    }
-   
-    #tMotor 
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tMotor .header_des
-    {
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        width: 410px;
-    }
-
-    #tMotor .header_can
-    {
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        width: 80px;
-    }
-
-    #tMotor .header_imp
-    {
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        width: 100px;
-    }
-
-    #tResumen
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tResumen .titulo
-    {   
-        border-radius: 5px;
-        margin: 10px;
-        width: 80px;
-        outline: none;
-        border: none;
-        background: black;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: white;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    }
-
-    #tResumen .cantidad
-    {   
-        border-radius: 5px;
-        margin: 10px;
-        width: 120px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-       
-    }
-
-
-    #tTarjetas 
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tTarjetas .titulo {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        margin: 30px;
-        width: 180px;
-        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: left;
-    
-    }
-
-    #tTarjetas .id_cliente {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 180px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: left;
-    
-    }
-
-    #tTarjetas .fecha {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 200px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    
-    }
-
-    #tTarjetas .total
-    {
-        border-radius: 5px;
-        margin: 10px;
-        width: 130px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-    }
-
-    #tTarjetas .id_venta {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 180px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: left;
-    }
-
-    #tTarjetas .vendedor {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 250px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: left;
-    
-    }
-
-	#tTarjetas .boton {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        margin: 30px;
-        width: 250px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: left;
-    
-    }
-
-    #tTarjetas .titulo
-    {
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-    }
-
-    #tPartidasModFormOriginal
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tPartidasModFormOriginal .cantidad 
-    {   
-        border-radius: 5px;
-        margin: 10px;
-        width: 80px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    }
-
-    #tPartidasModFormPorActualizar
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tPartidasModFormPorActualizar .cantidad 
-    {   
-        border-radius: 5px;
-        margin: 10px;
-        width: 80px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    }
-
-    #tPartidasModFormPorActualizar .importe
-    {
-        border-radius: 5px;
-        margin: 10px;
-        width: 100px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-    }
-
-</style>
-
 
 <script>
 
@@ -702,7 +58,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -754,7 +110,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle_general/id_venta=" + id_venta,
+            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_general/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -816,7 +172,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://54.144.154.41:8180/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -1033,7 +389,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://54.144.154.41:8180/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
+                url: "http://localhost:8080/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -1056,7 +412,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://54.144.154.41:8180/inventariojeans/rest/services/tarjetas/id_cliente=" + id_cliente,
+                url: "http://localhost:8080/inventariojeans/rest/services/tarjetas/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -1184,7 +540,7 @@
         
         var parent = $('embed#pdf_file').parent();
        
-        var newElement = "<embed src='http://54.144.154.41:8180/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+        var newElement = "<embed src='http://localhost/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
 
         $('embed#pdf_file').remove();
         parent.append(newElement);
@@ -1207,36 +563,40 @@
                     <nav class="navbar navbar-default navbar-static-top my_navbar clearfix" role="navigation">
                         <ul class="nav sf-menu clearfix">
                             <li class="active"><a href="index.jsp">Inicio</a></li>
-                            <li class="sub-menu"><a href="#">Clientes<span></span></a>
+                            <li class="sub-menu"><a href="about.html">Clientes<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Nuevo</a></li>
-                                    <li><a href="#">Modificar</a></li>
-                                    <li><a href="#">Buscar</a></li>
+                                    <li><a href="nuevoClienteJSON.jsp">Nuevo</a></li><!-- 03-04-2020 -->
+                                    <li><a href="modificar_cliente.jsp">Modificar</a></li>
+                                    <li><a href="busquedas.jsp">Buscar</a></li>
+                                    <li><a href="vendedores.jsp">Vendedores</a></li>
+                                    <li><a href="articulos.jsp">Articulos</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu"><a href="#">Ventas<span></span></a>
+                            <li class="sub-menu"><a href="modificar_venta.jsp">Ventas<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Ventas</a></li>
-                                    <li><a href="#">Abonos</a></li>
+                                    <li><a href="nueva_ventaJSON.jsp">Nueva venta</a></li>
+                                    <li><a href="modificar_venta.jsp">Ventas</a></li>
+                                    <li><a href="registrar_abono.jsp">Abonos</a></li>
+                                    <li><a href="tarjeta.jsp">Tarjetas</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu"><a href="#">Reportes<span></span></a>
+                            <li class="sub-menu"><a href="about.html">Reportes<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Rutas</a></li>
+                                    <li><a href="reporte_ruta.jsp">Rutas</a></li>
                                     <li><a href="#">Saldos menores</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
                             <li class="sub-menu"><a href="#">Notificaciones<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="notificacion_sms.jsp">Mensaje SMS</a></li>
-                                    <li><a href="notificacion.jsp">Correo electronico</a></li>
+                                    <li><a href="#">Mensaje SMS</a></li>
+                                    <li><a href="#">Correo electronico</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Salir</a></li>
+                            <li><a href="${pageContext.request.contextPath}/logout">Salir</a></li>
                         </ul>
                     </nav>
                 </div>

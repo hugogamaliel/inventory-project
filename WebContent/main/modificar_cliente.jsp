@@ -13,6 +13,7 @@
 <!--CSS-->
 <link rel="stylesheet" href="css/bootstrap.css" >
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/modificar-cliente.css">
 <link rel="stylesheet" href="fonts/font-awesome.css">
 <!--JS-->
 <script src="js/jquery.js"></script>
@@ -25,146 +26,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 -->
-<style>
-     
-     #inIDCliente {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 110px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtNombre {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 600px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtDireccion {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 600px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtColonia {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 400px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtCelular {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 400px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtLugar {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 400px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #selRutas {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 200px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtCelular {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 400px;
-        border: none;
-        background: #ffffff;
-        font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #txtReferencias {
-    
-    border-radius: 5px;
-    margin: 5px;
-    width: 400px;
-    border: none;
-    background: #ffffff;
-    font: 22px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-    line-height: 18px;
-    color: black;
-    padding: 10px 14px 10px 14px;
-    height: 150px;
-}
-
-</style>
-<script type="text/javascript">
-   
-</script>
 
 <script>
 
@@ -175,7 +36,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://54.144.154.41:8180/inventariojeans/rest/services/rutas",
+            url: "http://localhost:8080/inventariojeans/rest/services/rutas",
             dataType: "json",  
             success: function(data)
             {
@@ -238,7 +99,7 @@
             $.ajax(
             {
                 type: "POST",
-                url: "http://54.144.154.41:8180/inventariojeans/rest/postservices/post-modificar-cliente",
+                url: "http://localhost:8080/inventariojeans/rest/postservices/post-modificar-cliente",
                 data: JSON.stringify({"id": $('#inIDCliente').val(), "nombre": $('#txtNombre').val(), "direccion": $('#txtDireccion').val(), "colonia": $('#txtColonia').val(), "celular": $('#txtCelular').val(), "lugar": $('#txtLugar').val(), "ruta": $('#txtIdRuta').val(), "referencias": $('#txtReferencias').val()}),
                 headers: 
                 {
@@ -349,7 +210,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://54.144.154.41:8180/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
+                url: "http://localhost:8080/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -377,38 +238,48 @@
 <body>
 <!--header-->
 <header>
-   <div class="container">
+  <div class="container">
         <div class="row">
             <article class="col-lg-12 col-md-12 col-sm-12">
-                <h1 class="navbar-brand navbar-brand_"><a href="index.html">Inventario de Alexis</a></h1>
+                <h1 class="navbar-brand navbar-brand_"><a href="index.jsp">Inventario de Alexis</a></h1>
                 <div class="menuBox clearfix">
                     <nav class="navbar navbar-default navbar-static-top my_navbar clearfix" role="navigation">
                         <ul class="nav sf-menu clearfix">
                             <li class="active"><a href="index.jsp">Inicio</a></li>
                             <li class="sub-menu"><a href="#">Clientes<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Nuevo</a></li>
-                                    <li><a href="#">Modificar</a></li>
-                                    <li><a href="#">Buscar</a></li>
+                                    <li><a href="nuevoClienteJSON.jsp">Nuevo</a></li><!-- 03-04-2020 -->
+                                    <li><a href="modificar_cliente.jsp">Modificar</a></li>
+                                    <li><a href="busquedas.jsp">Buscar</a></li>
+                                    <li><a href="vendedores.jsp">Vendedores</a></li>
+                                    <li><a href="articulos.jsp">Articulos</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu"><a href="#">Ventas<span></span></a>
+                            <li class="sub-menu"><a href="modificar_venta.jsp">Ventas<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Ventas</a></li>
-                                    <li><a href="#">Abonos</a></li>
+                                    <li><a href="nueva_ventaJSON.jsp">Nueva venta</a></li>
+                                    <li><a href="modificar_venta.jsp">Ventas</a></li>
+                                    <li><a href="registrar_abono.jsp">Abonos</a></li>
+                                    <li><a href="tarjeta.jsp">Tarjetas</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
                             <li class="sub-menu"><a href="#">Reportes<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Rutas</a></li>
+                                    <li><a href="reporte_ruta.jsp">Rutas</a></li>
                                     <li><a href="#">Saldos menores</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li><a href="notificacion.jsp">Notificaciones</a></li>
-                            <li><a href="#">Salir</a></li>
+                            <li class="sub-menu"><a href="#">Notificaciones<span></span></a>
+                                <ul class="submenu">
+                                    <li><a href="#">Mensaje SMS</a></li>
+                                    <li><a href="#">Correo electronico</a></li>
+                                    <li class="tr1"></li>
+                                </ul>
+                            </li>
+                            <li><a href="${pageContext.request.contextPath}/logout">Salir</a></li>
                         </ul>
                     </nav>
                 </div>

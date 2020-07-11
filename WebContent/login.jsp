@@ -29,7 +29,7 @@ body{
 	bottom: -40px;
 	width: auto;
 	height: auto;
-	background-image: url(http://54.144.154.41:8180/inventariojeans/picture1.jpg);
+	background-image: url(http://DESKTOP-SI86HH8:8280/inventariojeans/picture1.jpg);
 	background-size: 100% 100%;
 	
 	z-index: 0;

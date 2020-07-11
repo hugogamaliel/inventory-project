@@ -13,8 +13,10 @@
 <!--CSS-->
 <link rel="stylesheet" href="css/bootstrap.css" >
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tarjeta.css">
 <link rel="stylesheet" href="fonts/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="style.css">
+
 <!--JS-->
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -30,113 +32,6 @@
 
 <script src="/js/pdfobject.js"></script>
 
-<style>
-
-    #tRowsForm th, td 
-    {
-        color: white;
-        font-size: 18px;
-        
-    }
-	
-    #tTarjetas 
-    {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border: none;
-        border-collapse: separate;
-        border-spacing: 10px 0.5rem;
-    }
-
-    #tTarjetas .id_cliente {
-        
-       	border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 180px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: left;
-    
-    }
-
-   	#tTarjetas .fecha {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 200px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: center;
-    
-    }
-
-    #tTarjetas .total
-    {
-    	border-radius: 5px;
-        margin: 10px;
-        width: 130px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: right;
-    }
-
-    #tTarjetas .id_venta {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 180px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: left;
-    }
-
-    #tTarjetas .vendedor {
-        
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        background: #ffffff;
-        margin: 30px;
-        width: 250px;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: black;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-        resize: none;
-        text-align: left;
-    
-    }
-
-</style>
-
 <script>
 
     window.onload = function() 
@@ -149,7 +44,7 @@ function verPDF(id_venta)
 
         var parent = $('embed#pdf_file').parent();
        
-        var newElement = "<embed src='http://54.144.154.41:8180/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+        var newElement = "<embed src='http://54.144.154.41:8080/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
 
         $('embed#pdf_file').remove();
         parent.append(newElement);
@@ -170,36 +65,40 @@ function verPDF(id_venta)
                     <nav class="navbar navbar-default navbar-static-top my_navbar clearfix" role="navigation">
                         <ul class="nav sf-menu clearfix">
                             <li class="active"><a href="index.jsp">Inicio</a></li>
-                            <li class="sub-menu"><a href="#">Clientes<span></span></a>
+                            <li class="sub-menu"><a href="about.html">Clientes<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Nuevo</a></li>
-                                    <li><a href="#">Modificar</a></li>
-                                    <li><a href="#">Buscar</a></li>
+                                    <li><a href="nuevoClienteJSON.jsp">Nuevo</a></li><!-- 03-04-2020 -->
+                                    <li><a href="modificar_cliente.jsp">Modificar</a></li>
+                                    <li><a href="busquedas.jsp">Buscar</a></li>
+                                    <li><a href="vendedores.jsp">Vendedores</a></li>
+                                    <li><a href="articulos.jsp">Articulos</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu"><a href="#">Ventas<span></span></a>
+                            <li class="sub-menu"><a href="modificar_venta.jsp">Ventas<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Ventas</a></li>
-                                    <li><a href="#">Abonos</a></li>
+                                    <li><a href="nueva_ventaJSON.jsp">Nueva venta</a></li>
+                                    <li><a href="modificar_venta.jsp">Ventas</a></li>
+                                    <li><a href="registrar_abono.jsp">Abonos</a></li>
+                                    <li><a href="tarjeta.jsp">Tarjetas</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu"><a href="#">Reportes<span></span></a>
+                            <li class="sub-menu"><a href="about.html">Reportes<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Rutas</a></li>
+                                    <li><a href="reporte_ruta.jsp">Rutas</a></li>
                                     <li><a href="#">Saldos menores</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
                             <li class="sub-menu"><a href="#">Notificaciones<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="notificacion_sms.jsp">Mensaje SMS</a></li>
-                                    <li><a href="notificacion.jsp">Correo electronico</a></li>
+                                    <li><a href="#">Mensaje SMS</a></li>
+                                    <li><a href="#">Correo electronico</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Salir</a></li>
+                            <li><a href="${pageContext.request.contextPath}/logout">Salir</a></li>
                         </ul>
                     </nav>
                 </div>

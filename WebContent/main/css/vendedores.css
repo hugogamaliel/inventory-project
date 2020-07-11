@@ -1,0 +1,179 @@
+ #txtNombre {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 150px;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #tVendedores
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border: none;
+        border-collapse: separate;
+        border-spacing: 10px 0.5rem;
+    }
+
+    #tVendedores .nombre 
+    {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 150px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: #bab9b9;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    }
+
+    #tVendedor 
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        /*
+        border-collapse: separate;
+        border-spacing: 5px 1rem;
+        */
+    }
+
+    #tVendedor .header
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    #tVendedor .sel {
+        
+        border-radius: 5px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        margin: 10px;
+        width: 350px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: #bab9b9;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    }
+
+
+    #tTarjetas 
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border: none;
+        border-collapse: separate;
+        border-spacing: 10px 0.5rem;
+        width: 100%;
+    }
+
+    #tTarjetas .fecha {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 200px;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 35px;
+        resize: none;
+        text-align: center;
+    
+    }
+
+    #tTarjetas .total
+    {
+        border-radius: 5px;
+        margin: 10px;
+        width: 130px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 35px;
+        resize: none;
+        text-align: right;
+    }
+
+    #tTarjetas .id_venta {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 180px;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 35px;
+        resize: none;
+        text-align: left;
+    }
+
+    #tTarjetas .nombre {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 850px;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 35px;
+        text-align: left;
+    }
+
+    #tTarjetas .estado {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 250px;
+        font: 16px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 35px;
+        resize: none;
+        text-align: left;
+    }
+
+    #tTarjetas .titulo
+    {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }

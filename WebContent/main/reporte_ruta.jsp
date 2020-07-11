@@ -13,6 +13,7 @@
 <!--CSS-->
 <link rel="stylesheet" href="css/bootstrap.css" >
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/reporte-ruta.css">
 <link rel="stylesheet" href="fonts/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <!--JS-->
@@ -27,47 +28,6 @@
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
 
-<style>
-
-    #selRutas {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 150px;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #rutaDesc {
-        
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        color: #bab9b9;
-    }
-
-    #selIdRuta {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 90px;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-    
-</style>
-
-
 <script>
 
     window.onload = function() 
@@ -76,7 +36,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://54.144.154.41:8180/inventariojeans/rest/services/rutas",
+            url: "http://localhost:8080/inventariojeans/rest/services/rutas",
             dataType: "json",  
             success: function(data)
             {
@@ -128,7 +88,7 @@
 
         document.getElementById("pdf_file").setAttribute("height", "800px");
         document.getElementById("pdf_file").setAttribute("width", "1000x");
-        document.getElementById("pdf_file").setAttribute("src", "http://localhost/reporte_ruta_" + id_ruta + ".pdf");
+        document.getElementById("pdf_file").setAttribute("src", "http://DESKTOP-SI86HH8:8180/reporte_ruta_" + id_ruta + ".pdf");
     }
 
     function generateReporte()
@@ -139,7 +99,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://54.144.154.41:8180/inventariojeans/rest/services/reporte_ruta/id_ruta=" + id_ruta,
+            url: "http://localhost:8080/inventariojeans/rest/services/reporte_ruta/id_ruta=" + id_ruta,
             dataType: "json",  
             success: function(data)
             {
