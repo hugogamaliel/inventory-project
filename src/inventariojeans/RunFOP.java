@@ -60,8 +60,6 @@ public class RunFOP {
 				System.out.println("Error al crear el reporte de ruta");
 			}
 			
-			
-		
 		return "";
 	}
 }
