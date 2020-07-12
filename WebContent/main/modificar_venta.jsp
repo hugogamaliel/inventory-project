@@ -348,6 +348,8 @@
 
     function guardarModificaciones()
     {
+        //Pending to change to JSON payload - 2020-07-11
+
         var txtTotal = document.getElementById("txtTotal");
         var txtIDVenta = document.getElementById("txtIDVenta");
         //var txtIsEnganche = document.getElementById("txtIsEnganche");
@@ -540,7 +542,7 @@
         
         var parent = $('embed#pdf_file').parent();
        
-        var newElement = "<embed src='http://localhost/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+        var newElement = "<embed src='http://localhost/pdf/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
 
         $('embed#pdf_file').remove();
         parent.append(newElement);
@@ -626,7 +628,7 @@
                     <p></p>
                    
                     <h2>Cliente</h2>
-                    <input type="text" name="inIDCliente" id="inIDCliente" onkeypress="getVentas(event)" onchange="changeInIDCliente()" />ID:
+                    <input type="text" name="inIDCliente" id="inIDCliente" onkeypress="getVentas(event)" onchange="changeInIDCliente()" />
 
                     <table id="tTarjetas">
                     </table>              
@@ -703,7 +705,7 @@
                          <p></p>
                          
                         <embed id="pdf_file" src="" type="application/pdf" height="800px" width="1000px">
-                    
+                
                         <div id="divBtnRegresar" hidden><a class="btn-default btn5" href="index.jsp">Regresar</a></div>
                         
                     </form>

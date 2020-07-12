@@ -88,7 +88,7 @@
 
         document.getElementById("pdf_file").setAttribute("height", "800px");
         document.getElementById("pdf_file").setAttribute("width", "1000x");
-        document.getElementById("pdf_file").setAttribute("src", "http://DESKTOP-SI86HH8:8180/reporte_ruta_" + id_ruta + ".pdf");
+        document.getElementById("pdf_file").setAttribute("src", "http://localhost/pdf/reporte_ruta_" + id_ruta + ".pdf");
     }
 
     function generateReporte()
