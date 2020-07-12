@@ -28,6 +28,8 @@
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
 
+<script src="/js/pdfobject.js"></script>
+
 <script>
 
     window.onload = function() 
@@ -85,10 +87,20 @@
         document.getElementById("selIdRuta").selectedIndex = posc;
 
         var id_ruta = document.getElementById("selIdRuta").value;
+    }
 
-        document.getElementById("pdf_file").setAttribute("height", "800px");
-        document.getElementById("pdf_file").setAttribute("width", "1000x");
-        document.getElementById("pdf_file").setAttribute("src", "http://localhost/pdf/reporte_ruta_" + id_ruta + ".pdf");
+    //2020-07-11
+    function verTarjeta()
+    {   
+        var id_ruta = document.getElementById("selIdRuta").value;
+
+        var parent = $('embed#pdf_file').parent();
+       
+        var newElement = "<embed src='http://localhost/pdf/reporte_ruta_" + id_ruta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+
+        $('embed#pdf_file').remove();
+        parent.append(newElement);
+
     }
 
     function generateReporte()
@@ -212,10 +224,15 @@
                     <div class="btns">
                              <a class="btn-default btn5">Generar reporte</a>
                         </div>
+                    
                     -->
-                    <a class="btn-default btn6" onclick="generateReporte()">Generar reporte</a>
+                    <a class="btn-default btn6" onclick="verTarjeta()">Abrir</a>
+                    <a class="btn-default btn6" onclick="generateReporte()">Actualizar</a>
                     <p></p>
+                    <!--
                     <embed id="pdf_file" src="" type="application/pdf" height="600px" width="100%">
+                    -->
+                    <embed id="pdf_file" src="" type="application/pdf" height="800px" width="1000px">
 
                 </article>
 
