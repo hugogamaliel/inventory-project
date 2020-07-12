@@ -116,7 +116,7 @@
             success: function(data)
             {
                 var response = data.reporte_ruta;
-
+                window.location.replace("reporte_ruta.jsp");
                 if(reponse=="1")
                 {
                     alert()
@@ -126,6 +126,7 @@
 
                 }
                 alert("response: " + response);
+                
             },
             error: function(e)
             {  
@@ -225,6 +226,9 @@
                              <a class="btn-default btn5">Generar reporte</a>
                         </div>
                     
+                    -->
+                    <!--
+                    <input type="button" id="btnAbrir" onclick="verTarjeta()" value="Abrir">/input>
                     -->
                     <a class="btn-default btn6" onclick="verTarjeta()">Abrir</a>
                     <a class="btn-default btn6" onclick="generateReporte()">Actualizar</a>
