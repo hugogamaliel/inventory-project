@@ -96,7 +96,7 @@ $(function(){
 				        foo = document.getElementById("btnVerPDF"+i);
 				        foo.setAttribute("onclick","javascript:verPDF("+data.tarjetas[i].id_venta+");");
 
-				        
+				        /*
 				        x = row.insertCell(6);
                         t1 = document.createElement("button");
 				        t1.id = "btnGenerarPDF"+i;
@@ -105,7 +105,7 @@ $(function(){
 				        x.appendChild(t1);
 				        foo = document.getElementById("btnGenerarPDF"+i);
 				        foo.setAttribute("onclick","javascript:generarPDF(" + data.tarjetas[i].id_venta + ");");
-				        
+				        */
 				        
                         j=j+1;
                                 
