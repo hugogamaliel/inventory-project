@@ -159,7 +159,7 @@
             } 
         });
 
-        verTarjeta(id_venta);
+        //verTarjeta(id_venta);
     }
 
     //Accionada con el boton "Modificar"
