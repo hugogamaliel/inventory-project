@@ -210,7 +210,7 @@ public class RESTfulPOSTServices
             		"VALUES (" + abono.idVenta + ", " + abono.cantidad + ", " + abono.saldo + ", '" + fechaAbono + "', " + 
             		abono.isEnganche + ")";
             
-            System.out.println("consultaSaveAbono" + consultaSaveAbono);
+            System.out.println("consultaSaveAbono " + consultaSaveAbono);
 
         	myDBHelper.updateRecords(consultaSaveAbono); //Ejecutar consulta para guardar el abono
         	
@@ -221,13 +221,33 @@ public class RESTfulPOSTServices
         	System.out.println("Error: " + e);
         }
         
-      //Consulta para actualizar el saldo
+        //Consulta para actualizar el saldo
 
-    	String consultaActualizarSaldo = "update inv_ventas set saldo = " + abono.saldo + " where id_venta = " + abono.idVenta;
+    	String consultaActualizarSaldo = "UPDATE inv_ventas SET saldo = " + abono.saldo + " WHERE id_venta = " + abono.idVenta;
 
     	System.out.println("consultaActualizarSaldo: " + consultaActualizarSaldo);
-
+    	
     	myDBHelper.updateRecords(consultaActualizarSaldo); //Ejecutar consulta para actualizar el saldo
+    	
+    	//Actualizar status de cuenta - 2020-07-17
+    	int nvoSaldo = Integer.parseInt(abono.saldo);
+    	System.out.println("Saldo que quedaría: " + nvoSaldo);
+    	
+    	//Si el saldo quedaría en 0 la cuenta quedaría pagada, entonces cambiar su status a 'Pagada'
+    	if (nvoSaldo==0)
+    	{
+    		String consultaCambiarStatus = "UPDATE inv_ventas SET estado = 4 WHERE id_venta = " + abono.idVenta;
+    		
+    		try
+            {
+                System.out.println("consultaCambiarStatus: " + consultaCambiarStatus);
+            	myDBHelper.updateRecords(consultaCambiarStatus); //Ejecutar consulta para cambiar status a 'Pagada'
+            }
+            catch(Exception e)
+            {
+            	System.out.println("Error: " + e);
+            }
+    	}
     
     	//Actualizar PDF de tarjeta
     	
