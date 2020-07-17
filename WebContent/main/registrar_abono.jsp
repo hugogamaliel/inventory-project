@@ -143,10 +143,12 @@
                     document.getElementById("txtSaldo").innerHTML = "Saldo: " + data.cliente.saldo;
                     document.getElementById("tSaldo").value = data.cliente.saldo;
                     saldo = Number(data.cliente.saldo);
+                    status = Number(data.cliente.estado);
                     
-                    if(saldo==0)//Validar si la cuenta ya fue liquidada 29-05-19
+                    //Validar si la cuenta esta cancelada - 2020-07-17
+                    if(saldo==0||status==3)//Validar si la cuenta ya fue liquidada 29-05-19
                     {
-                        alert("Cuenta liquidada");
+                        alert("Cuenta liquidada o cancelada");
                         document.getElementById("inIDTarjeta").focus();
                     }
                     else
