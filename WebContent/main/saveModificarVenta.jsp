@@ -197,7 +197,9 @@
 	//Ejecutar FOP
 	RunFOP runFOP=new RunFOP();
 	runFOP.createPDF(id_venta);
-		
+	
+	runFOP.createPDF(id_venta);
+	
 	response.sendRedirect("modificar_venta.jsp");
 	
 %>

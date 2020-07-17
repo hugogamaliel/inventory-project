@@ -23,14 +23,12 @@
 <script src="js/jquery.ui.totop.js"></script>
 <script src="js/jquery.equalheights.js"></script>
 <script src="js/camera.js"></script>
+<script src="js/jquery.mobile.customized.min.js"></script>
 <script>
     $(document).ready(function(){
         jQuery('.camera_wrap').camera();
     });
 </script>
-<!--[if (gt IE 9)|!(IE)]><!-->
-      <script src="js/jquery.mobile.customized.min.js"></script>
-<!--<![endif]-->
 
 </head>
 <body>
@@ -39,12 +37,12 @@
     <div class="container">
         <div class="row">
             <article class="col-lg-12 col-md-12 col-sm-12">
-                <h1 class="navbar-brand navbar-brand_"><a href="index.html">Inventario de Alexis</a></h1>
+                <h1 class="navbar-brand navbar-brand_"><a href="index.jsp">Inventario de Alexis</a></h1>
                 <div class="menuBox clearfix">
                     <nav class="navbar navbar-default navbar-static-top my_navbar clearfix" role="navigation">
                         <ul class="nav sf-menu clearfix">
                             <li class="active"><a href="index.jsp">Inicio</a></li>
-                            <li class="sub-menu"><a href="about.html">Clientes<span></span></a>
+                            <li class="sub-menu"><a href="#">Clientes<span></span></a>
                                 <ul class="submenu">
                                     <li><a href="nuevoClienteJSON.jsp">Nuevo</a></li><!-- 03-04-2020 -->
                                     <li><a href="modificar_cliente.jsp">Modificar</a></li>
@@ -63,7 +61,7 @@
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu"><a href="about.html">Reportes<span></span></a>
+                            <li class="sub-menu"><a href="#">Reportes<span></span></a>
                                 <ul class="submenu">
                                     <li><a href="reporte_ruta.jsp">Rutas</a></li>
                                     <li><a href="#">Saldos menores</a></li>
@@ -72,8 +70,8 @@
                             </li>
                             <li class="sub-menu"><a href="#">Notificaciones<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="notificacion_sms.jsp">Mensaje SMS</a></li>
-                                    <li><a href="notificacion.jsp">Correo electronico</a></li>
+                                    <li><a href="#">Mensaje SMS</a></li>
+                                    <li><a href="#">Correo electronico</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>

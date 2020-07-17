@@ -109,7 +109,8 @@ public class RESTfulServices
 		
 		ResultSet rs=null;
 		
-		consulta = "select c.id_cliente, c.nombre, c.direccion, c.colonia, c.telefono, c.lugar, v.saldo from inv_clientes as c inner join inv_ventas as v on c.id_cliente = v.id_cliente where v.id_venta = " + id_cuenta;
+		consulta = "SELECT c.id_cliente, c.nombre, c.direccion, c.colonia, c.telefono, c.lugar, v.saldo, v.estado "
+				+ "from inv_clientes AS c INNER JOIN inv_ventas AS v ON c.id_cliente = v.id_cliente WHERE v.id_venta = " + id_cuenta;
 		
 		DBHelper dbHelper = new DBHelper();
 		
@@ -124,6 +125,7 @@ public class RESTfulServices
 					"', 'telefono':'" + rs.getString(5) +
 					"', 'lugar':'" + rs.getString(6) +
 					"', 'saldo':'" + rs.getString(7) +
+					"', 'estado':'" + rs.getString(8) +
 					"'}}";
 		}
 		catch (Exception e)

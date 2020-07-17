@@ -1,0 +1,102 @@
+ #tRowsForm th, td 
+    {
+        color: white;
+        font-size: 18px;
+        
+    }
+    
+    #tTarjetas 
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border: none;
+        border-collapse: separate;
+        border-spacing: 10px 0.5rem;
+    }
+
+    #tTarjetas .id_cliente {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 180px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: left;
+    
+    }
+
+    #tTarjetas .fecha {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 200px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: center;
+    
+    }
+
+    #tTarjetas .total
+    {
+        border-radius: 5px;
+        margin: 10px;
+        width: 130px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: right;
+    }
+
+    #tTarjetas .id_venta {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 180px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: left;
+    }
+
+    #tTarjetas .vendedor {
+        
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 250px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: black;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+        text-align: left;
+    
+    }

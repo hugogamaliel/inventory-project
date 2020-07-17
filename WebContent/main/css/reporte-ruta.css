@@ -1,0 +1,36 @@
+#selRutas {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 150px;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: #bab9b9;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+
+    #rutaDesc {
+        
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        color: #bab9b9;
+    }
+
+    #selIdRuta {
+        
+        border-radius: 5px;
+        margin: 5px;
+        width: 90px;
+        border: none;
+        background: #ffffff;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: #bab9b9;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+       
+    }
+    

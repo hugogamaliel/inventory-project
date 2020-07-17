@@ -1,0 +1,79 @@
+#main 
+    {
+        width: 5000px;
+    }
+
+    #tPartidas 
+    {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border: none;
+        border-collapse: separate;
+        border-spacing: 10px 0.5rem;
+    }
+
+    #tPartidas .id
+    {       
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 100px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: #bab9b9;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    
+    }
+
+    #tPartidas .nombre
+    {       
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 600px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: #bab9b9;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    
+    }
+
+    #tPartidas .direccion
+    {       
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 600px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: #bab9b9;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    
+    }
+
+     #tPartidas .colonia
+    {       
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        margin: 30px;
+        width: 200px;
+        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 18px;
+        color: #bab9b9;
+        padding: 10px 14px 10px 14px;
+        height: 39px;
+        resize: none;
+    }

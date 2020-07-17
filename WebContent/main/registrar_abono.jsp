@@ -3,7 +3,7 @@
 
 <head>
 <title>Registrar abono</title>
-<meta charset="utf-8">    
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description" content="Your description">
@@ -23,10 +23,17 @@
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/jquery.ui.totop.js"></script>
+<!--
+<script src="js/jquery.equalheights.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/jquery.mobile.customized.min.js"></script>
+-->
 <script src="js/accounting.js"></script>
 
+<!--
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+-->
 
 <script>
 
@@ -62,6 +69,7 @@
             document.getElementById("tResumen").hidden=true; 
 
 
+            //Obtener las partidas - inv_ventas_detalle
             $.ajax(
             {
                 type: "GET",  
@@ -135,10 +143,12 @@
                     document.getElementById("txtSaldo").innerHTML = "Saldo: " + data.cliente.saldo;
                     document.getElementById("tSaldo").value = data.cliente.saldo;
                     saldo = Number(data.cliente.saldo);
+                    status = Number(data.cliente.estado);
                     
-                    if(saldo==0)//Validar si la cuenta ya fue liquidada 29-05-19
+                    //Validar si la cuenta esta cancelada - 2020-07-17
+                    if(saldo==0||status==3)//Validar si la cuenta ya fue liquidada 29-05-19
                     {
-                        alert("Cuenta liquidada");
+                        alert("Cuenta liquidada o cancelada");
                         document.getElementById("inIDTarjeta").focus();
                     }
                     else
@@ -375,7 +385,7 @@
 <body>
 <!--header-->
 <header>
-    <div class="container">
+      <div class="container">
         <div class="row">
             <article class="col-lg-12 col-md-12 col-sm-12">
                 <h1 class="navbar-brand navbar-brand_"><a href="index.jsp">Inventario de Alexis</a></h1>
@@ -383,36 +393,40 @@
                     <nav class="navbar navbar-default navbar-static-top my_navbar clearfix" role="navigation">
                         <ul class="nav sf-menu clearfix">
                             <li class="active"><a href="index.jsp">Inicio</a></li>
-                            <li class="sub-menu"><a href="#">Clientes<span></span></a>
+                            <li class="sub-menu"><a href="about.html">Clientes<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Nuevo</a></li>
-                                    <li><a href="#">Modificar</a></li>
-                                    <li><a href="#">Buscar</a></li>
+                                    <li><a href="nuevoClienteJSON.jsp">Nuevo</a></li><!-- 03-04-2020 -->
+                                    <li><a href="modificar_cliente.jsp">Modificar</a></li>
+                                    <li><a href="busquedas.jsp">Buscar</a></li>
+                                    <li><a href="vendedores.jsp">Vendedores</a></li>
+                                    <li><a href="articulos.jsp">Articulos</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu"><a href="#">Ventas<span></span></a>
+                            <li class="sub-menu"><a href="modificar_venta.jsp">Ventas<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Ventas</a></li>
-                                    <li><a href="#">Abonos</a></li>
+                                    <li><a href="nueva_ventaJSON.jsp">Nueva venta</a></li>
+                                    <li><a href="modificar_venta.jsp">Ventas</a></li>
+                                    <li><a href="registrar_abono.jsp">Abonos</a></li>
+                                    <li><a href="tarjeta.jsp">Tarjetas</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu"><a href="#">Reportes<span></span></a>
+                            <li class="sub-menu"><a href="about.html">Reportes<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Rutas</a></li>
+                                    <li><a href="reporte_ruta.jsp">Rutas</a></li>
                                     <li><a href="#">Saldos menores</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
                             <li class="sub-menu"><a href="#">Notificaciones<span></span></a>
                                 <ul class="submenu">
-                                    <li><a href="notificacion_sms.jsp">Mensaje SMS</a></li>
-                                    <li><a href="notificacion.jsp">Correo electronico</a></li>
+                                    <li><a href="#">Mensaje SMS</a></li>
+                                    <li><a href="#">Correo electronico</a></li>
                                     <li class="tr1"></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Salir</a></li>
+                            <li><a href="${pageContext.request.contextPath}/logout">Salir</a></li>
                         </ul>
                     </nav>
                 </div>

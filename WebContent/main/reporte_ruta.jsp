@@ -13,6 +13,7 @@
 <!--CSS-->
 <link rel="stylesheet" href="css/bootstrap.css" >
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/reporte-ruta.css">
 <link rel="stylesheet" href="fonts/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <!--JS-->
@@ -27,46 +28,7 @@
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
 
-<style>
-
-    #selRutas {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 150px;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-
-    #rutaDesc {
-        
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        color: #bab9b9;
-    }
-
-    #selIdRuta {
-        
-        border-radius: 5px;
-        margin: 5px;
-        width: 90px;
-        border: none;
-        background: #ffffff;
-        font: 18px 'Arial', "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-        color: #bab9b9;
-        padding: 10px 14px 10px 14px;
-        height: 39px;
-       
-    }
-    
-</style>
-
+<script src="/js/pdfobject.js"></script>
 
 <script>
 
@@ -125,10 +87,23 @@
         document.getElementById("selIdRuta").selectedIndex = posc;
 
         var id_ruta = document.getElementById("selIdRuta").value;
+    }
 
-        document.getElementById("pdf_file").setAttribute("height", "800px");
-        document.getElementById("pdf_file").setAttribute("width", "1000x");
-        document.getElementById("pdf_file").setAttribute("src", "http://localhost/reporte_ruta_" + id_ruta + ".pdf");
+    //2020-07-11
+    function verTarjeta()
+    {   
+        var id_ruta = document.getElementById("selIdRuta").value;
+        //alert(id_ruta);
+        /*
+        var parent = $('embed#pdf_file').parent();
+       
+        var newElement = "<embed src='http://localhost/pdf/reporte_ruta_" + id_ruta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+
+        $('embed#pdf_file').remove();
+        parent.append(newElement);
+        */
+        window.open("http://localhost/pdf/reporte_ruta_" + id_ruta +".pdf"); //2020-07-17
+
     }
 
     function generateReporte()
@@ -144,7 +119,7 @@
             success: function(data)
             {
                 var response = data.reporte_ruta;
-
+                window.location.replace("reporte_ruta.jsp");
                 if(reponse=="1")
                 {
                     alert()
@@ -154,6 +129,7 @@
 
                 }
                 alert("response: " + response);
+                
             },
             error: function(e)
             {  
@@ -252,10 +228,18 @@
                     <div class="btns">
                              <a class="btn-default btn5">Generar reporte</a>
                         </div>
+                    
                     -->
-                    <a class="btn-default btn6" onclick="generateReporte()">Generar reporte</a>
+                    <!--
+                    <input type="button" id="btnAbrir" onclick="verTarjeta()" value="Abrir">/input>
+                    -->
+                    <a class="btn-default btn6" onclick="verTarjeta()">Abrir</a>
+                    <a class="btn-default btn6" onclick="generateReporte()">Actualizar</a>
                     <p></p>
+                    <!--
                     <embed id="pdf_file" src="" type="application/pdf" height="600px" width="100%">
+                    -->
+                    <embed id="pdf_file" src="" type="application/pdf" height="800px" width="1000px">
 
                 </article>
 
