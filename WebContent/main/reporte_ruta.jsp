@@ -94,12 +94,15 @@
     {   
         var id_ruta = document.getElementById("selIdRuta").value;
         //alert(id_ruta);
+        /*
         var parent = $('embed#pdf_file').parent();
        
         var newElement = "<embed src='http://localhost/pdf/reporte_ruta_" + id_ruta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
 
         $('embed#pdf_file').remove();
         parent.append(newElement);
+        */
+        window.open("http://localhost/pdf/reporte_ruta_" + id_ruta +".pdf"); //2020-07-17
 
     }
 

@@ -44,7 +44,7 @@ function verPDF(id_venta)
 
         var parent = $('embed#pdf_file').parent();
        
-        var newElement = "<embed src='http://localhost/pdf/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+        var newElement = "<embed src='http://inventariojeans.hrlabsdesign.com:8080/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
 
         $('embed#pdf_file').remove();
         parent.append(newElement);
