@@ -69,6 +69,7 @@
             document.getElementById("tResumen").hidden=true; 
 
 
+            //Obtener las partidas - inv_ventas_detalle
             $.ajax(
             {
                 type: "GET",  

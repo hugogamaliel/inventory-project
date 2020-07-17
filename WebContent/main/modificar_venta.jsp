@@ -536,6 +536,7 @@
         //$('embed#pdf_file').remove();
     }
 
+    /*
     function verTarjeta(id_venta)
     {
         //alert("hello");
@@ -548,6 +549,14 @@
         parent.append(newElement);
 
     }
+    */
+
+    
+    function verTarjeta(id_venta)
+    {
+        window.open("http://localhost/pdf/tarjeta_" + id_venta +".pdf"); 
+    }
+    
 
 </script>
 
