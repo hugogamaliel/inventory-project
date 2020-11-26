@@ -16,28 +16,36 @@ public class MaintenanceTools {
 	{
 		String fileContent = "";
 		
-		String Path = "C:\\Users\\HReyes\\new_workspace\\omueblesj\\WebContent\\recursos\\";
-		String PathProd = "C:\\Users\\HReyes\\new_workspace\\omueblesj\\WebContent\\recursos\\";
-		String current = "administrador:8180";
-		String next = "localhost:8180";
+		String Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
+		String PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
+		
+		String current = "localhost:8180";
+		String next = "localhost:8280"; //noe
+		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
-		Path = "C:\\Users\\HReyes\\new_workspace\\omueblesj\\src\\omueblesj\\";
-		PathProd = "C:\\Users\\HReyes\\new_workspace\\omueblesj\\src\\omueblesj\\";
-		current = "Password0.";
-		next = "mbge321.";
+		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
+		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
+		
+		current = "hugo321.";
+		next = "Password0."; //noe
+		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
-		Path = "C:\\Users\\HReyes\\new_workspace\\omueblesj\\src\\omueblesj\\";
-		PathProd = "C:\\Users\\HReyes\\new_workspace\\omueblesj\\src\\omueblesj\\";
-		current = "jdbc:sqlserver://administrador:1433"; 
-		next = "jdbc:sqlserver://LAPTOP-E57S71TA:1433";
+		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
+		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
+		
+		current = "jdbc:sqlserver://DESKTOP-RHRBFDR:1433"; 
+		next = "jdbc:sqlserver://-:1433"; //noe
+		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
-		Path = "C:\\Users\\HReyes\\new_workspace\\omueblesj\\WebContent\\recursos\\js\\";
-		PathProd = "C:\\Users\\HReyes\\new_workspace\\omueblesj\\WebContent\\recursos\\js\\";
-		current = "administrador:8180";
-		next = "localhost:8180";
+		Path = "C:\\Users\\HReyes\\eclipse_workspace\\inventory-project\\WebContent\\main\\js\\";
+		PathProd = "C:\\Users\\HReyes\\eclipse_workspace\\inventory-project\\WebContent\\main\\js\\";
+		
+		current = "localhost:8080";
+		next = "localhost:8280"; //noe
+		
 		replaceFile(Path, PathProd, fileContent, current, next);
 
 	}
