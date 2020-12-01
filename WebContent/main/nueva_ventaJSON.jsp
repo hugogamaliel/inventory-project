@@ -39,7 +39,7 @@
          $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/max_id_venta",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/max_id_venta",
                 dataType: "json",  
                 success: function(data)
                 {     
@@ -69,13 +69,14 @@
         document.getElementById("txtPrecio").value = accounting.formatMoney(y[x].text);
         document.getElementById("txtCantidad").disabled=false;
 
-        
-
         x = document.getElementById("selIDArticulo").selectedIndex;
         y = document.getElementById("selIDArticulo").options;
 
         document.getElementById("txtIDArticulo").value = accounting.formatMoney(y[x].text);
 
+        //Corregir: el cursor no se posicionaba en el campo cantidad cuando se elegía una artículo
+        //2020-07-24
+        document.getElementById("txtCantidad").focus();
 
         //Corregir error: txtImporte no se actualizaba si había un cambio en el selector de articulos
         //Se actualizaba el precio pero no el importe
@@ -264,7 +265,7 @@
             $.ajax(
 			{
 				type: "GET",  
-				url: "http://localhost:8080/inventariojeans/rest/services/vendedores",
+				url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/vendedores",
 				dataType: "json",  
 				success: function(data)
 				{
@@ -404,7 +405,7 @@
         $.ajax(
             {
                 type: "POST",
-                url: "http://localhost:8080/inventariojeans/rest/postservices/post-venta",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-venta",
                 data: JSON.stringify(bodyObj),
                 headers: 
                 {
@@ -433,7 +434,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -456,7 +457,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/articulos",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/articulos",
                 dataType: "json",  
                 success: function(data)
                 {
@@ -571,7 +572,7 @@
                             <li class="sub-menu"><a href="modificar_venta.jsp">Ventas<span></span></a>
                                 <ul class="submenu">
                                     <li><a href="nueva_ventaJSON.jsp">Nueva venta</a></li>
-                                    <li><a href="modificar_venta.jsp">Ventas</a></li>
+                                    <li><a href="modificar_ventaJSON.jsp">Ventas</a></li>
                                     <li><a href="registrar_abono.jsp">Abonos</a></li>
                                     <li><a href="tarjeta.jsp">Tarjetas</a></li>
                                     <li class="tr1"></li>

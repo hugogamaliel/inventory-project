@@ -36,7 +36,7 @@
          $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/vendedores",
+            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/vendedores",
             dataType: "json",  
             success: function(data)
             {
@@ -72,7 +72,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/vendedores",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/vendedores",
                 dataType: "json",  
                 success: function(data)
                 {
@@ -149,7 +149,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/tarjetas_by_vendedor/id_vendedor=" + id_vendedor,
+            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/tarjetas_by_vendedor/id_vendedor=" + id_vendedor,
             dataType: "json",  
             success: function(data)
             {

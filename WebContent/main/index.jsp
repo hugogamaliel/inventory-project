@@ -55,7 +55,7 @@
                             <li class="sub-menu"><a href="modificar_venta.jsp">Ventas<span></span></a>
                                 <ul class="submenu">
                                     <li><a href="nueva_ventaJSON.jsp">Nueva venta</a></li>
-                                    <li><a href="modificar_venta.jsp">Ventas</a></li>
+                                    <li><a href="modificar_ventaJSON.jsp">Ventas</a></li>
                                     <li><a href="registrar_abono.jsp">Abonos</a></li>
                                     <li><a href="tarjeta.jsp">Tarjetas</a></li>
                                     <li class="tr1"></li>

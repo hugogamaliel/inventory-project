@@ -58,7 +58,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -110,7 +110,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_general/id_venta=" + id_venta,
+            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/ventas_detalle_general/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -172,7 +172,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -304,14 +304,45 @@
 
     function cancelar()
     {
+        var txtIDVenta = document.getElementById("txtIDVenta").value;
+        
+        //Ask the user for assurance in the action
+        var txt;
+        var response = confirm("Se cancelara venta: " + txtIDVenta);
 
-        document.getElementById("txtAction").value = 2;
+        if (response==true)
+        {
+            //Invoke an specific microservice to cancel the Sale - 2020-07-25
+            ventasObj = {};
+            ventasObj.id = txtIDVenta;
 
-        var txtIDVenta = document.getElementById("txtIDVenta");
-        var txtAction = document.getElementById("txtAction");
-
-        var miformulario = document.getElementById("inv_form");
-        miformulario.submit();
+            var ventaJSON = JSON.stringify(ventasObj); 
+            //Invoke API path to cancel Sale
+            //POST
+            
+            $.ajax(
+            {
+                type: "POST",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-cancelar-venta",
+                //data: JSON.stringify(ventasObj),
+                data: ventaJSON,
+                headers: 
+                {
+                    "Content-Type": "application/json"
+                },
+                success: function(data) 
+                {
+                    alert("Venta cancelada");
+                    window.location.replace("modificar_ventaJSON.jsp");
+                },
+                error : function(e)
+                {
+                    alert("Error");
+                }
+            });
+        }
+        else {}
+        
     }
 
     function calcular_resumen()
@@ -349,34 +380,141 @@
     function guardarModificaciones()
     {
         //Pending to change to JSON payload - 2020-07-11
+        //Change to JSON payload - 2020-07-25
 
-        var txtTotal = document.getElementById("txtTotal");
-        var txtIDVenta = document.getElementById("txtIDVenta");
-        //var txtIsEnganche = document.getElementById("txtIsEnganche");
-        var txtAction = document.getElementById("txtAction");
+        var txtTotal = document.getElementById("txtTotal").value;
+        var txtIDVenta = document.getElementById("txtIDVenta").value;
 
-        var miformulario = document.getElementById("inv_form");
+        //Will separate the modifications in other 2 services, in order to use the seam Java Object (Venta)
+        //  One for update the current rows and another to insert the new rows
 
-        var sizeTPartidas = Number(document.getElementById("tPartidasModFormOriginal").getElementsByTagName("tr").length);
+        //Old rows
+        //Populate an array with the ID's of the original rows and actual=1 - Originally this was clmIDSOriginal
+        var ids = [];
 
-        for (i=0;i<sizeTPartidas; i++)
-        { 
-            document.getElementById("clmIDSOriginal").value = document.getElementById("clmIDSOriginal").value + document.getElementById('tPartidasModFormOriginal').rows[i].cells[0].innerHTML + "-";
+        var table = $("#tPartidasModFormOriginal");
+        
+        table.find('tr').each(function (i) 
+        {
+            let id;
+            var $tds = $(this).find('td');
+            id = $tds.eq(0).text();
+      
+            ids.push(id);
+        });
+        
+        //Populate and array with the new quantities
+        var quantities = [];
+
+        table = $("#tPartidasModFormPorActualizar");
+        
+        table.find('tr').each(function (i) 
+        {
+            let cantidad;
+            var $tds = $(this).find('td');
+            cantidad = $tds.eq(1).text();
+      
+            quantities.push(cantidad);
+        });
+
+        //Once we have the 2 arrays (id's and quantities) populated, paste them in a new array to create the items object (itemsObj)
+        items = [];
+
+        //Get the size of the array, in theory is the same in both
+        var arraySize = quantities.length; //alert("size: " + arraySize);
+        
+        for(i=0; i<arraySize; i++)
+        {
+            let id;
+            let cantidad;
+
+            id = ids[i];
+            cantidad = quantities[i];
+
+            items.push({id, cantidad});
         }
+        
+        var itemsObj = {};
+        itemsObj = items;
 
-        sizeTPartidas = Number(document.getElementById("tPartidasModFormPorActualizar").getElementsByTagName("tr").length);
+        //var itemsJSON = JSON.stringify(itemsObj); //alert("itemsJSON: " + itemsJSON);
 
-        for (i=0;i<sizeTPartidas; i++)
-        { 
-            document.getElementById("clmIDVenta").value = document.getElementById("clmIDVenta").value + document.getElementById('tPartidasModFormPorActualizar').rows[i].cells[0].innerHTML + "-";
-            document.getElementById("clmCantidad").value = document.getElementById("clmCantidad").value + document.getElementById('tPartidasModFormPorActualizar').rows[i].cells[1].innerHTML + "-";
-            document.getElementById("clmPrecio").value = document.getElementById("clmPrecio").value + document.getElementById('tPartidasModFormPorActualizar').rows[i].cells[2].innerHTML + "-";
-            document.getElementById("clmImporte").value = document.getElementById("clmImporte").value + document.getElementById('tPartidasModFormPorActualizar').rows[i].cells[3].innerHTML + "-";
-            document.getElementById("clmIDArticulo").value = document.getElementById("clmIDArticulo").value + document.getElementById('tPartidasModFormPorActualizar').rows[i].cells[4].innerHTML + "-";
-        }
+        //Create ventaJSON: original IDs +  new quantities
+        var ventaObj = {};
+        ventaObj.items = itemsObj;
 
-        miformulario.submit();
+        var ventaJSON = JSON.stringify(ventaObj); //alert("ventaJSON: " + ventaJSON);
+        
+        //POST - Update the current rows to actual=2 or actual=3
+        $.ajax(
+            {
+                type: "POST",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-modificar-venta-oldrows",
+                data: ventaJSON,
+                headers:
+                {
+                    "Content-Type": "application/json"
+                },
+                success: function(data)
+                {
+                    //alert("hello");
+                },
+                error: function(e)
+                {
+                    alert("Error in POST");
+                }
 
+            });
+        
+        //New rows
+        //tPartidasModFormPorActualizar is still the source of the modified rows
+        //Create JSON
+        var newRows = []; 
+       
+        var table = $("#tPartidasModFormPorActualizar");
+
+        table.find('tr').each(function (i) 
+        {
+            var $tds = $(this).find('td'),
+            cantidad = $tds.eq(1).text(),
+            precio = $tds.eq(2).text();
+            importe = $tds.eq(3).text();
+            idArticulo = $tds.eq(4).text();
+      
+            newRows.push({"cantidad": cantidad, "precio": precio, "importe": importe, "idArticulo": idArticulo});
+        });
+
+        var rowsObj = {};
+        rowsObj = newRows;
+
+        var newVentaObj = {};
+        newVentaObj.id = txtIDVenta;
+        newVentaObj.total = txtTotal;
+        newVentaObj.items = rowsObj;
+        
+        var newVentaJSON = JSON.stringify(newVentaObj); //alert("newVentaJSON: " + newVentaJSON);
+        
+        //POST
+        $.ajax(
+            {
+                type: "POST",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-modificar-venta-newrows",
+                data: newVentaJSON,
+                headers:
+                {
+                    "Content-Type": "application/json"
+                },
+                success: function(data)
+                {
+                    window.location.replace("modificar_ventaJSON.jsp");
+                },
+                error: function (e)
+                {
+                    alert("Error");
+                }
+            } 
+        )
+    
     }
 
     function getVentas(event)
@@ -391,7 +529,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -414,7 +552,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/tarjetas/id_cliente=" + id_cliente,
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/tarjetas/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -535,26 +673,10 @@
 
         //$('embed#pdf_file').remove();
     }
-
-    /*
-    function verTarjeta(id_venta)
-    {
-        //alert("hello");
-        
-        var parent = $('embed#pdf_file').parent();
-       
-        var newElement = "<embed src='http://inventariojeans.hrlabsdesign.com:8080/tarjeta_" + id_venta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
-
-        $('embed#pdf_file').remove();
-        parent.append(newElement);
-
-    }
-    */
-
     
     function verTarjeta(id_venta)
     {
-        window.open("http://localhost/pdf/tarjeta_" + id_venta +".pdf"); 
+        window.open("http://DESKTOP-SI86HH8:8180/pdf/tarjeta_" + id_venta +".pdf"); 
     }
     
 
@@ -587,7 +709,7 @@
                             <li class="sub-menu"><a href="modificar_venta.jsp">Ventas<span></span></a>
                                 <ul class="submenu">
                                     <li><a href="nueva_ventaJSON.jsp">Nueva venta</a></li>
-                                    <li><a href="modificar_venta.jsp">Ventas</a></li>
+                                    <li><a href="modificar_ventaJSON.jsp">Ventas</a></li>
                                     <li><a href="registrar_abono.jsp">Abonos</a></li>
                                     <li><a href="tarjeta.jsp">Tarjetas</a></li>
                                     <li class="tr1"></li>
@@ -657,8 +779,6 @@
 
                     <table id="tPartidas">
                     </table>
-
-                    
 
                     <p></p>
                     <div id="main">

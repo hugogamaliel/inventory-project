@@ -68,12 +68,11 @@
             //document.getElementById("l3").hidden=true;
             document.getElementById("tResumen").hidden=true; 
 
-
             //Obtener las partidas - inv_ventas_detalle
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -130,7 +129,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/datos_cliente_by_id/id_cuenta=" + id_venta,
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/datos_cliente_by_id/id_cuenta=" + id_venta,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -150,6 +149,8 @@
                     {
                         alert("Cuenta liquidada o cancelada");
                         document.getElementById("inIDTarjeta").focus();
+                        document.getElementById("inAbono").hidden=false;
+                        document.getElementById("inAbono").focus();
                     }
                     else
                     {   
@@ -192,7 +193,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/abonos/id_venta=" + id_venta,
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/abonos/id_venta=" + id_venta,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -360,7 +361,7 @@
             $.ajax(
             {
                 type: "POST",
-                url: "http://localhost:8080/inventariojeans/rest/postservices/post-abono",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-abono",
                 data: JSON.stringify(itemAbono),
                 headers: 
                 {
@@ -406,7 +407,7 @@
                             <li class="sub-menu"><a href="modificar_venta.jsp">Ventas<span></span></a>
                                 <ul class="submenu">
                                     <li><a href="nueva_ventaJSON.jsp">Nueva venta</a></li>
-                                    <li><a href="modificar_venta.jsp">Ventas</a></li>
+                                    <li><a href="modificar_ventaJSON.jsp">Ventas</a></li>
                                     <li><a href="registrar_abono.jsp">Abonos</a></li>
                                     <li><a href="tarjeta.jsp">Tarjetas</a></li>
                                     <li class="tr1"></li>
