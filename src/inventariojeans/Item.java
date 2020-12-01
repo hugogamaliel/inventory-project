@@ -5,13 +5,23 @@ import java.util.Map;
 
 public class Item 
 {
-	
+	String id;
 	String descripcion;
 	String cantidad;
 	String precio;
 	String importe;
 	String idArticulo;
 	Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	
+	public String getId()
+	{
+		return id;
+	}
+	
+	public void setID(String id)
+	{
+		this.id = id;
+	}
 	
 	public String getDescripcion() {
 		return descripcion;

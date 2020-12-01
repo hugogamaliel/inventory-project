@@ -36,7 +36,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/rutas",
+            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/rutas",
             dataType: "json",  
             success: function(data)
             {
@@ -99,7 +99,7 @@
             $.ajax(
             {
                 type: "POST",
-                url: "http://localhost:8080/inventariojeans/rest/postservices/post-modificar-cliente",
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-modificar-cliente",
                 data: JSON.stringify({"id": $('#inIDCliente').val(), "nombre": $('#txtNombre').val(), "direccion": $('#txtDireccion').val(), "colonia": $('#txtColonia').val(), "celular": $('#txtCelular').val(), "lugar": $('#txtLugar').val(), "ruta": $('#txtIdRuta').val(), "referencias": $('#txtReferencias').val()}),
                 headers: 
                 {
@@ -210,7 +210,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://localhost:8080/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
+                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {

@@ -38,7 +38,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/rutas",
+            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/rutas",
             dataType: "json",  
             success: function(data)
             {
@@ -97,12 +97,12 @@
         /*
         var parent = $('embed#pdf_file').parent();
        
-        var newElement = "<embed src='http://localhost/pdf/reporte_ruta_" + id_ruta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
+        var newElement = "<embed src='http://DESKTOP-SI86HH8:8180/pdf/reporte_ruta_" + id_ruta +".pdf' id='pdf_file' type='application/pdf' height='570px' width='100%'>";
 
         $('embed#pdf_file').remove();
         parent.append(newElement);
         */
-        window.open("http://localhost/pdf/reporte_ruta_" + id_ruta +".pdf"); //2020-07-17
+        window.open("http://DESKTOP-SI86HH8:8180/pdf/reporte_ruta_" + id_ruta +".pdf"); //2020-07-17
 
     }
 
@@ -114,7 +114,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://localhost:8080/inventariojeans/rest/services/reporte_ruta/id_ruta=" + id_ruta,
+            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/reporte_ruta/id_ruta=" + id_ruta,
             dataType: "json",  
             success: function(data)
             {

@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ArrayList;
 
 public class CreateXMLTarjeta 
 {
@@ -13,7 +15,7 @@ public class CreateXMLTarjeta
 		DBHelper dbHelper = new DBHelper();
 		
 		String consVenta="";
-		String xml="", row="", partidas="", abonos="";
+		String xml="", row="", partidas="", abonos="", abonos_n="";
 		String header="";
 		double precio=0, importe=0;
 		
@@ -85,11 +87,8 @@ public class CreateXMLTarjeta
 		
 		xml = xml + partidas;
 		
-		//footer
-		
-		
 		//abonos
-		consVenta = "set language 'spanish'select day(fecha), DateName(month,fecha), year(fecha), cantidad, saldo, "
+		consVenta = "SET language 'spanish'select day(fecha), DateName(month,fecha), year(fecha), cantidad, saldo, "
 				+ "CASE isEnganche WHEN 1 THEN 'Enganche' ELSE ' ' END from inv_abonos where id_venta = " + id_venta;
 		rs=null; row="";
 		
@@ -102,40 +101,73 @@ public class CreateXMLTarjeta
 			System.out.println("Error: " + e);
 		}
 		
+		//2020-07-20
+		/*
+		 * Split the credit rows in two different blocks in the PDF file
+		 * Determine the number of rows retrieved
+		 * Put the first 7 rows in an XML node and the rest of them in another node
+		 * Put both groups into Array Lists. Iterate the lists to populate the XML nodes
+		 */
+		
+		//ArrayList<String> nAbonos = new ArrayList<String>();
+		
 		while(rs.next())
 		{
-			row = "<abono dia='" + rs.getString(1) 
-					+ "' mes='" + rs.getString(2) 
-					+ "' year='" + rs.getString(3)
-					+ "' abono='" + rs.getString(4)
-					+ "' saldo='" + rs.getString(5)
-					+ "' enganche='" + rs.getString(6)
-					+ "'/>";
+			rsCount = rsCount + 1;
 			
-			abonos = abonos + row;
-			
+			if (rsCount <= 7)
+			{
+				row = "<abono dia='" + rs.getString(1) 
+						+ "' mes='" + rs.getString(2) 
+						+ "' year='" + rs.getString(3)
+						+ "' abono='" + rs.getString(4)
+						+ "' saldo='" + rs.getString(5)
+						+ "' enganche='" + rs.getString(6)
+						+ "'/>";
+				
+				abonos = abonos + row;
+			}
+			else
+			{
+				row = "<abono_n dia='" + rs.getString(1) 
+						+ "' mes='" + rs.getString(2) 
+						+ "' year='" + rs.getString(3)
+						+ "' abono='" + rs.getString(4)
+						+ "' saldo='" + rs.getString(5)
+						+ "' enganche='" + rs.getString(6)
+						+ "'/>";
+				
+				abonos_n = abonos_n + row;
+			}
 		}
 		
-		xml = xml + abonos;
+		//Add an element to the node abonos_n in the XML file, otherwise Apache FOP throws an error because is expecting that element - 2020-07-24
+		row = "<abono_n dia='' mes='' year='' abono='' saldo='' enganche=''/>";
+		abonos_n = abonos_n + row;
 		
-		//partidas en blanco para los borders
+		System.out.println("How many rows: " + rsCount);
+		
+		xml = xml + abonos + abonos_n; //Include the second node of credits (abonos_n) to the XML file - 2020-07-20
+			
+		//blank rows to the borders
 		for (int i=0; i<=5; i++)
 		{
 			xml = xml + "<partidat cantidad=''/>";
 		}
-		
+			
 		//Incluir un abono en blanco
 		xml = xml + "<abono dia='' mes='' year='' abono='' saldo='' enganche=''/>";
-		
+			
 		for (int i=0; i<=28; i++)
 		{
 			xml = xml + "<abonot dia='24' mes='Abril' year='2019' abono='50.00' saldo='520.00' enganche=' '/>";
 		}
-		
+			
 		for (int i=0; i<=6; i++)
 		{
 			xml = xml + "<abonot2 dia='24' mes='Abril' year='2019' abono='50.00' saldo='520.00' enganche=' '/>";
 		}
+		
 		
 		xml = xml + "</tarjeta>";
 		xml = xml.replaceAll("'", "\"");

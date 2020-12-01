@@ -11,9 +11,7 @@ public class RunFOP {
 		String myCommand="";
 		
 			myCommand = "'C:\\FOP\\fop' -xml 'C:\\InventarioJeans\\tarjetasXML\\tarjeta_" + id_venta + ".xml' -xsl 'C:\\InventarioJeans\\bat\\tarjeta.xsl'"
-					+ " -pdf "
-					+ "'C:\\Program Files (x86)\\Apache Software Foundation\\Apache2.2"
-					+ "\\htdocs\\pdf\\tarjeta_" + id_venta+ ".pdf'\n'exit'" ;
+					+ " -pdf 'C:\\Apache24\\htdocs\\pdf\\tarjeta_" + id_venta+ ".pdf'\n'exit'" ;
 				
 			myCommand = myCommand.replaceAll("'", "\"");
 			System.out.println("myCommand: " + myCommand);
@@ -42,9 +40,7 @@ public class RunFOP {
 		String myCommand="";
 		
 			myCommand = "'C:\\FOP\\fop' -xml 'C:\\InventarioJeans\\tarjetasXML\\reporte_ruta_" + id_ruta + ".xml' -xsl 'C:\\InventarioJeans\\bat\\reporte_ruta.xsl'"
-					+ " -pdf "
-					+ "'C:\\Program Files (x86)\\Apache Software Foundation\\Apache2.2\\"
-					+ "htdocs\\pdf\\reporte_ruta_" + id_ruta+ ".pdf'\n'exit'" ;
+					+ " -pdf 'C:\\Apache24\\htdocs\\pdf\\reporte_ruta_" + id_ruta+ ".pdf'\n'exit'" ;
 				
 			myCommand = myCommand.replaceAll("'", "\"");
 			System.out.println("myCommand: " + myCommand);
