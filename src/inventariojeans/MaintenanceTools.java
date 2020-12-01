@@ -17,34 +17,34 @@ public class MaintenanceTools {
 		String fileContent = "";
 		
 		//Tomcat
-		String Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
-		String PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
+		String Path = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\WebContent\\main\\";
+		String PathProd = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\WebContent\\main\\";
 		
-		String next = "localhost:8180"; //hr
+		String next = "localhost:8080"; //hr
 		String current = "DESKTOP-SI86HH8:8280"; //noe
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
 		//DB
-		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
-		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
+		Path = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\src\\inventariojeans\\";
+		PathProd = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\src\\inventariojeans\\";
 		
 		next = "hugo321."; //hr
-		current = "Password0."; //noe
+		current = "hugo321."; //noe
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
-		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
-		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
+		Path = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\src\\inventariojeans\\";
+		PathProd = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\src\\inventariojeans\\";
 		
 		next = "jdbc:sqlserver://DESKTOP-RHRBFDR:1433"; //hr
-		current = "jdbc:sqlserver://DESKTOP-SI86HH8:1433"; //noe
+		current = "jdbc:sqlserver://DESKTOP-RHRBFDR:1433"; //noe
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
 		//JS
-		Path = "C:\\Users\\HReyes\\eclipse_workspace\\inventory-project\\WebContent\\main\\js\\";
-		PathProd = "C:\\Users\\HReyes\\eclipse_workspace\\inventory-project\\WebContent\\main\\js\\";
+		Path = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\WebContent\\main\\js\\";
+		PathProd = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\WebContent\\main\\js\\";
 		
 		next = "localhost:8080"; //hr
 		current = "DESKTOP-SI86HH8:8280"; //noe
@@ -52,8 +52,8 @@ public class MaintenanceTools {
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
 		//Apache
-		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
-		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
+		Path = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\WebContent\\main\\";
+		PathProd = "C:\\Users\\hugog\\eclipse-workspace\\inventory-project\\WebContent\\main\\";
 		
 		next = "localhost:8180"; //hr
 		current = "DESKTOP-SI86HH8:8180"; //noe
@@ -61,6 +61,7 @@ public class MaintenanceTools {
 	
 	public static void replaceFile(String Path, String PathProd, String fileContent, String current, String next) throws IOException
 	{
+		System.out.println("Path: " + Path);
 		File f = new File(Path);
 		//String fileContent = "";
 		

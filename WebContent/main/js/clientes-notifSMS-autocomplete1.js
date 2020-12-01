@@ -5,7 +5,7 @@ $(function(){
   $.ajax({
 		  type: "GET", 
 		  async: false,
-	    url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/nombres_clientes",
+	    url: "http://localhost:8080/inventariojeans/rest/services/nombres_clientes",
 	    dataType: "json",
 	    success:  function(data) 
 	    {
@@ -46,7 +46,7 @@ $(function(){
     	$.ajax(
                 {
                     type: "GET",  
-                    url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/datos_cliente/id_cliente=" + id_cliente,
+                    url: "http://localhost:8080/inventariojeans/rest/services/datos_cliente/id_cliente=" + id_cliente,
                     dataType: "json",  
                     success: function(data)
                     {

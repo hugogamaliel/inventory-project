@@ -58,7 +58,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -110,7 +110,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/ventas_detalle_general/id_venta=" + id_venta,
+            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_general/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -172,7 +172,7 @@
         $.ajax(
         {
             type: "GET",  
-            url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
+            url: "http://localhost:8080/inventariojeans/rest/services/ventas_detalle_actual/id_venta=" + id_venta,
             dataType: "json",  
             success: function(data)
             {
@@ -323,7 +323,7 @@
             $.ajax(
             {
                 type: "POST",
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-cancelar-venta",
+                url: "http://localhost:8080/inventariojeans/rest/postservices/post-cancelar-venta",
                 //data: JSON.stringify(ventasObj),
                 data: ventaJSON,
                 headers: 
@@ -449,7 +449,7 @@
         $.ajax(
             {
                 type: "POST",
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-modificar-venta-oldrows",
+                url: "http://localhost:8080/inventariojeans/rest/postservices/post-modificar-venta-oldrows",
                 data: ventaJSON,
                 headers:
                 {
@@ -498,7 +498,7 @@
         $.ajax(
             {
                 type: "POST",
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-modificar-venta-newrows",
+                url: "http://localhost:8080/inventariojeans/rest/postservices/post-modificar-venta-newrows",
                 data: newVentaJSON,
                 headers:
                 {
@@ -529,7 +529,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
+                url: "http://localhost:8080/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -552,7 +552,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/tarjetas/id_cliente=" + id_cliente,
+                url: "http://localhost:8080/inventariojeans/rest/services/tarjetas/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {

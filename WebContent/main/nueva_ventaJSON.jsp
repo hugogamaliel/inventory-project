@@ -39,7 +39,7 @@
          $.ajax(
             {
                 type: "GET",  
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/max_id_venta",
+                url: "http://localhost:8080/inventariojeans/rest/services/max_id_venta",
                 dataType: "json",  
                 success: function(data)
                 {     
@@ -265,7 +265,7 @@
             $.ajax(
 			{
 				type: "GET",  
-				url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/vendedores",
+				url: "http://localhost:8080/inventariojeans/rest/services/vendedores",
 				dataType: "json",  
 				success: function(data)
 				{
@@ -405,7 +405,7 @@
         $.ajax(
             {
                 type: "POST",
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/postservices/post-venta",
+                url: "http://localhost:8080/inventariojeans/rest/postservices/post-venta",
                 data: JSON.stringify(bodyObj),
                 headers: 
                 {
@@ -434,7 +434,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
+                url: "http://localhost:8080/inventariojeans/rest/services/get_cliente/id_cliente=" + id_cliente,
                 dataType: "json",  
                 success: function(data)
                 {
@@ -457,7 +457,7 @@
             $.ajax(
             {
                 type: "GET",  
-                url: "http://DESKTOP-SI86HH8:8280/inventariojeans/rest/services/articulos",
+                url: "http://localhost:8080/inventariojeans/rest/services/articulos",
                 dataType: "json",  
                 success: function(data)
                 {
