@@ -16,6 +16,7 @@ public class MaintenanceTools {
 	{
 		String fileContent = "";
 		
+		//Tomcat
 		String Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
 		String PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
 		
@@ -24,6 +25,7 @@ public class MaintenanceTools {
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
+		//DB
 		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
 		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
 		
@@ -40,6 +42,7 @@ public class MaintenanceTools {
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
+		//JS
 		Path = "C:\\Users\\HReyes\\eclipse_workspace\\inventory-project\\WebContent\\main\\js\\";
 		PathProd = "C:\\Users\\HReyes\\eclipse_workspace\\inventory-project\\WebContent\\main\\js\\";
 		
