@@ -20,8 +20,8 @@ public class MaintenanceTools {
 		String Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
 		String PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
 		
-		String current = "localhost:8180";
-		String next = "localhost:8280"; //noe
+		String next = "localhost:8180"; //hr
+		String current = "DESKTOP-SI86HH8:8280"; //noe
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
@@ -29,16 +29,16 @@ public class MaintenanceTools {
 		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
 		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
 		
-		current = "hugo321.";
-		next = "Password0."; //noe
+		next = "hugo321."; //hr
+		current = "Password0."; //noe
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
 		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
 		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\src\\inventariojeans\\";
 		
-		current = "jdbc:sqlserver://DESKTOP-RHRBFDR:1433"; 
-		next = "jdbc:sqlserver://-:1433"; //noe
+		next = "jdbc:sqlserver://DESKTOP-RHRBFDR:1433"; //hr
+		current = "jdbc:sqlserver://DESKTOP-SI86HH8:1433"; //noe
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
 		
@@ -46,11 +46,17 @@ public class MaintenanceTools {
 		Path = "C:\\Users\\HReyes\\eclipse_workspace\\inventory-project\\WebContent\\main\\js\\";
 		PathProd = "C:\\Users\\HReyes\\eclipse_workspace\\inventory-project\\WebContent\\main\\js\\";
 		
-		current = "localhost:8080";
-		next = "localhost:8280"; //noe
+		next = "localhost:8080"; //hr
+		current = "DESKTOP-SI86HH8:8280"; //noe
 		
 		replaceFile(Path, PathProd, fileContent, current, next);
-
+		
+		//Apache
+		Path = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
+		PathProd = "C:\\Users\\hugog\\eclipse_workspace\\inventory-project\\WebContent\\main\\";
+		
+		next = "localhost:8180"; //hr
+		current = "DESKTOP-SI86HH8:8180"; //noe
 	}
 	
 	public static void replaceFile(String Path, String PathProd, String fileContent, String current, String next) throws IOException
